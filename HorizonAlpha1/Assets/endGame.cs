@@ -19,11 +19,15 @@ public class endGame : MonoBehaviour
           print("WINNER");
           SceneManager.LoadScene("WinScreen");
 
+          Debug.Log("Made a change");
+
         }
         else if(Input.GetKeyDown("l"))
         {
           print("LOSER");
           SceneManager.LoadScene("LossScreen");
         }
+
+
     }
 }
