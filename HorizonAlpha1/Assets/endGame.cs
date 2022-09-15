@@ -20,6 +20,7 @@ public class endGame : MonoBehaviour
           SceneManager.LoadScene("WinScreen");
 
           Debug.Log("Made a change");
+          Debug.Log("Changed Email");
 
         }
         else if(Input.GetKeyDown("l"))
