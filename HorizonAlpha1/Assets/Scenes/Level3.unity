@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1383,8 +1383,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1351158756}
   - component: {fileID: 1351158758}
-  - component: {fileID: 1351158757}
   - component: {fileID: 1351158759}
+  - component: {fileID: 1351158760}
   m_Layer: 0
   m_Name: 3rd Person Player
   m_TagString: Player
@@ -1409,29 +1409,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 48.346, z: 0}
---- !u!114 &1351158757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351158755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae55aaac39ac0324dbc52378d9567c4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 1351158758}
-  cam: {fileID: 1829568314}
-  speed: 25
-  gravity: -25
-  jumpHeight: 2.5
-  groundCheck: {fileID: 957050059}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  turnSmoothTime: 0.1
 --- !u!143 &1351158758
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1462,6 +1439,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d12feef581548908a6a1d9403d0de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1351158760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351158755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae55aaac39ac0324dbc52378d9567c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1351158758}
+  cam: {fileID: 1829568314}
+  speed: 25
+  gravity: -80
+  jumpHeight: 2.7
+  groundCheck: {fileID: 957050059}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  turnSmoothTime: 0.1
 --- !u!1 &1404181027
 GameObject:
   m_ObjectHideFlags: 3
@@ -1531,7 +1531,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404181027}
-  m_LocalRotation: {x: 0.079374656, y: 0.41303432, z: -0.036164824, w: 0.9065288}
+  m_LocalRotation: {x: 0.07937468, y: 0.41303435, z: -0.036164835, w: 0.90652883}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
