@@ -21,6 +21,7 @@ namespace InventoryExample.UI
             if (Input.GetKeyDown(toggleKey))
             {
                 uiContainer.SetActive(!uiContainer.activeSelf);
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
