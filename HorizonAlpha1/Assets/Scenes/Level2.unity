@@ -206,8 +206,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630358880}
   m_HandleRect: {fileID: 1630358879}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.58281606
+  m_Value: 1.0000005
+  m_Size: 0.5828161
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9857,7 +9857,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964578938}
-  m_LocalRotation: {x: 0.13302146, y: 0.35471085, z: -0.05106205, w: 0.9240553}
+  m_LocalRotation: {x: 0.13302147, y: 0.35471088, z: -0.05106206, w: 0.9240553}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11595,7 +11595,7 @@ GameObject:
   - component: {fileID: 972706022}
   - component: {fileID: 972706021}
   m_Layer: 0
-  m_Name: wwwwwwww
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15844,7 +15844,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651384366}
-  m_LocalRotation: {x: 0.09936741, y: 0.3563316, z: -0.03814349, w: 0.92827743}
+  m_LocalRotation: {x: 0.09936742, y: 0.3563316, z: -0.038143493, w: 0.92827743}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
