@@ -33,6 +33,8 @@ public class PlayerMovementState : PlayerBaseState
 
     private void OnTarget()
     {
+        if (!stateMachine.Targeter.SelectTarget()) { return; }
+
         stateMachine.SwitchState(new TargetingState(stateMachine));
     }
     private Vector3 CalculateMovement()

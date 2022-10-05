@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809a7168e9d58bc41bde698cf5809ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: []
 --- !u!135 &3432054542878180120
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -58,7 +57,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1272649357167342834
 Rigidbody:
@@ -137,7 +136,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4580837397379913037}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 167.19, y: 3.22, z: 179.9}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
@@ -212,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 3927450178986606488}
   <Controller>k__BackingField: {fileID: 8354938690966273911}
+  <Targeter>k__BackingField: {fileID: 8636987960488833736}
   <FreeMovementSpeed>k__BackingField: 16
   <Force>k__BackingField: {fileID: 8039002161790900952}
   <RotationSmoothValue>k__BackingField: 10
