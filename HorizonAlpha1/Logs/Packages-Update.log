@@ -62,3 +62,12 @@ Update Mode: mergeDefaultDependencies
 The following packages were added:
   com.unity.render-pipelines.high-definition@12.1.0
   com.unity.shadergraph@12.1.0
+
+=== Mon Oct 10 10:27:59 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ext.nunit from version 1.0.0 to 1.0.6
+  com.unity.shadergraph from version 12.1.0 to 12.1.7
