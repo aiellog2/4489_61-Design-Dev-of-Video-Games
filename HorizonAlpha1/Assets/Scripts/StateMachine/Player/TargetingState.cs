@@ -19,7 +19,17 @@ public class TargetingState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        Debug.Log(stateMachine.Targeter.CurrentTarget.name);
+        if(stateMachine.Targeter.CurrentTarget == null)
+        {
+            stateMachine.SwitchState(new PlayerMovementState(stateMachine));
+            return;
+        }
+
+        Vector3 movement = CalculateMovement(deltaTime);
+
+        Move(movement * stateMachine.TargetingMovementSpeed, deltaTime);
+
+        FaceTarget();
     }
     public override void Exit()
     {
@@ -32,4 +42,15 @@ public class TargetingState : PlayerBaseState
 
         stateMachine.SwitchState(new PlayerMovementState(stateMachine));
     }
+
+    private Vector3 CalculateMovement(float deltaTime)
+    {
+        Vector3 movement = new Vector3();
+
+        movement += stateMachine.transform.right * stateMachine.InputReader.MovementValue.x;
+        movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
+
+        return movement;
+    }
+
 }

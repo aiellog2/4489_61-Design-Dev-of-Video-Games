@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809a7168e9d58bc41bde698cf5809ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraTargetGroup: {fileID: 0}
 --- !u!135 &310189278852256438
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -57,7 +58,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4199117600913630556
 Rigidbody:
@@ -311,6 +312,7 @@ MonoBehaviour:
   <Targeter>k__BackingField: {fileID: 6643836562395734886}
   <Animator>k__BackingField: {fileID: 545853950961737445}
   <FreeMovementSpeed>k__BackingField: 16
+  <TargetingMovementSpeed>k__BackingField: 15
   <Force>k__BackingField: {fileID: 8997017123766523474}
   <RotationSmoothValue>k__BackingField: 10
   <JumpForce>k__BackingField: 13
