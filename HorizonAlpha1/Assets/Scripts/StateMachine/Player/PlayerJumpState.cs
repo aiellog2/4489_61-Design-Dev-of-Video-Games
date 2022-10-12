@@ -20,7 +20,7 @@ public class PlayerJumpState : PlayerBaseState
     {
         Move(momentum, deltaTime);
 
-        if (stateMachine.Controller.velocity.y <= 0)
+        if (stateMachine.Controller.velocity.y <= 0 || stateMachine.Controller.isGrounded)
         {
             stateMachine.SwitchState(new PlayerFallState(stateMachine));
             return;
