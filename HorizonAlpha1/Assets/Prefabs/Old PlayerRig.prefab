@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2896836924369841019}
   m_Layer: 0
-  m_Name: PlayerRig
+  m_Name: Old PlayerRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
