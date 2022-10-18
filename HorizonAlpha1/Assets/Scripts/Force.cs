@@ -6,10 +6,14 @@ public class Force : MonoBehaviour
 {
 
     [SerializeField] private CharacterController controller;
+    [SerializeField] private float slowDown = 0.3f;
+
+    private Vector3 slowVelocity;
+    private Vector3 hit;
 
     private float verticalVelocity;
 
-    public Vector3 Movement => Vector3.up * verticalVelocity; 
+    public Vector3 Movement => hit + Vector3.up * verticalVelocity; 
 
     private void Update()
     {
@@ -21,10 +25,17 @@ public class Force : MonoBehaviour
         {
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
+
+        hit = Vector3.SmoothDamp(hit, Vector3.zero, ref slowVelocity, slowDown);
     }
 
     public void Jump(float jumpForce)
     {
         verticalVelocity += jumpForce;
+    }
+
+    public void AddForce(Vector3 force)
+    {
+        hit += force;
     }
 }

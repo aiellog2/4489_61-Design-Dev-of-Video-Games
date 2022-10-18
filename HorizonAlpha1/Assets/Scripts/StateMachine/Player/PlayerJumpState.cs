@@ -18,6 +18,7 @@ public class PlayerJumpState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
+
         Move(momentum, deltaTime);
 
         if (stateMachine.Controller.velocity.y <= 0 || stateMachine.Controller.isGrounded)
@@ -28,7 +29,7 @@ public class PlayerJumpState : PlayerBaseState
     }
     public override void Exit()
     {
-    }
 
+    }
 
 }
