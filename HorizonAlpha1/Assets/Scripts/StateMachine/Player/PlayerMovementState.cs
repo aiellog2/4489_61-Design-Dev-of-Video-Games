@@ -25,11 +25,18 @@ public class PlayerMovementState : PlayerBaseState
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.TargetEvent += OnTarget;
 
-        stateMachine.Animator.Play(FreeLookBlendTreeHash);
+        stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
   
     }
     public override void Tick(float deltaTime)
     {
+
+        if (stateMachine.InputReader.isAttacking)
+        {
+            stateMachine.SwitchState(new AttackState(stateMachine, 0));
+            return;
+        }
+
         Vector3 movement = CalculateMovement();
 
         Move(movement * stateMachine.FreeMovementSpeed, deltaTime);

@@ -10,6 +10,10 @@ public abstract class PlayerBaseState : BaseState
     {
         this.stateMachine = stateMachine;
     }
+    protected void Move(float deltaTime)
+    {
+        Move(Vector3.zero, deltaTime);
+    }
 
     protected void Move(Vector3 motion, float deltaTime)
     {
