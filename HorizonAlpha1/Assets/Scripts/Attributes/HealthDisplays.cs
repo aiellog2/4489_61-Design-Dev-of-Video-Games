@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-namespace RPG.Attributes
-{
+
   public class HealthDisplays : MonoBehaviour
   {
 
@@ -22,4 +21,3 @@ namespace RPG.Attributes
           GetComponent<TMP_Text>().text = String.Format("Health: {0:0.0}%", health.GetPercentage());
       }
   }
-}

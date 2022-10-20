@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace RPG.Stats
-{
+
   [CreateAssetMenu(fileName = "Progression", menuName = "Stats/New Progression", order = 0)]
   public class Progression : ScriptableObject
   {
@@ -13,7 +12,7 @@ namespace RPG.Stats
         {
           if (progressionClass.characterClass == characterClass)
           {
-            //return progressionClass.health[level - 1];
+            //return progressionClass.health[level];
           }
         }
           return 0;
@@ -36,4 +35,3 @@ namespace RPG.Stats
 
 
   }
-}

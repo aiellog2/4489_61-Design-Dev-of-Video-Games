@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RPG.Stats;
 
-namespace RPG.Attributes
-{
   public class BarrelManager : MonoBehaviour
   {
 
@@ -21,4 +18,3 @@ namespace RPG.Attributes
           h -= 25;
       } */
   }
-}

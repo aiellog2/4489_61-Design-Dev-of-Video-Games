@@ -1,36 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using RPG.Stats;
 
-public class Damage : MonoBehaviour
-{
-    [SerializeField] private Collider playerCollider;
 
-    private int damage;
-    private float knockback;
+  public class Damage : MonoBehaviour
+  {
+      [SerializeField] private Collider playerCollider;
 
-    private List<Collider> CollidedWith = new List<Collider>();
+      private int damage;
+      private float knockback;
 
-    private void OnEnable()
-    {
-        CollidedWith.Clear();
-    }
+      private List<Collider> CollidedWith = new List<Collider>();
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other == playerCollider) { return; }
+      private void OnEnable()
+      {
+          CollidedWith.Clear();
+      }
 
-        if (CollidedWith.Contains(other)) { return; }
+      private void OnTriggerEnter(Collider other)
+      {
+          if (other == playerCollider) { return; }
 
-        CollidedWith.Add(other);
+          if (CollidedWith.Contains(other)) { return; }
 
-        if (other.TryGetComponent<Health>(out Health health))
-        {
-            health.DealDamage(damage);
-        }
-    }
-    public void SetAttack(int damage)
-    {
-        this.damage = damage;
-    }
-}
+          CollidedWith.Add(other);
+
+          if (other.TryGetComponent<Health>(out Health health))
+          {
+              health.DealDamage(damage);
+          }
+      }
+      public void SetAttack(int damage)
+      {
+          this.damage = damage;
+      }
+  }
