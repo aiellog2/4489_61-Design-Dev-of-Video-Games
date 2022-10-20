@@ -1,10 +1,9 @@
-using System.Collections;
+/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Stats;
 
-namespace RPG.Attributes
-{
+
   public class Health : MonoBehaviour
   {
       [SerializeField] float healthPoints = 100f;
@@ -21,15 +20,7 @@ namespace RPG.Attributes
         return isDead;
       }
 
-      public void TakeDamage(GameObject instigator, float damage)
-      {
-        healthPoints = Mathf.Max(healthPoints - damage, 0);
-        if(healthPoints == 0)
-        {
-          Die();
-          AwardExperience(instigator);
-        }
-      }
+
 
       public float GetPercentage()
       {
@@ -44,13 +35,7 @@ namespace RPG.Attributes
         GetComponent<Animator>().SetTrigger("die");
       }
 
-      private void AwardExperience(GameObject instigator)
-      {
-        Experience experience = instigator.GetComponent<Experience>();
-        if (experience == null) return;
 
-        experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
-      }
 
 
 
@@ -73,6 +58,4 @@ namespace RPG.Attributes
       {
 
       }
-  }
-
-}
+  } */

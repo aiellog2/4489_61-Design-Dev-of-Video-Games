@@ -1,5 +1,4 @@
-namespace RPG.Stats
-{
+
   public enum CharacterClass
   {
     Player,
@@ -7,4 +6,3 @@ namespace RPG.Stats
     Shadow,
     Wizard
   }
-}

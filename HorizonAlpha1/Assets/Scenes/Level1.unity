@@ -479,20 +479,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5677281228893986935, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
+        type: 3}
+      propertyPath: startingLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6890475831076186435, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7429250831540985054, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7616115618983097910, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.34917238
+      value: 0.34917232
       objectReference: {fileID: 0}
     - target: {fileID: 7616115618983097910, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.018878205
+      value: -0.018878201
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695495544745205253, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
+        type: 3}
+      propertyPath: maxHealth
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acdf6d3794e43f47a62f3a0f5610a9f, type: 3}
