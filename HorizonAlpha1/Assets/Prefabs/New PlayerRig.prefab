@@ -1277,9 +1277,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3143783532428676854, guid: 55f1a7187196f8943ad77f517e374026,
+        type: 3}
+      propertyPath: weaponlogic
+      value: 
+      objectReference: {fileID: 5667023784467014341}
     m_RemovedComponents:
     - {fileID: 4437639756003708528, guid: 55f1a7187196f8943ad77f517e374026, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 55f1a7187196f8943ad77f517e374026, type: 3}
+--- !u!1 &5667023784467014341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4465663114815212736, guid: 55f1a7187196f8943ad77f517e374026,
+    type: 3}
+  m_PrefabInstance: {fileID: 8312634366651575813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &5677281228893986930 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4437639756003708535, guid: 55f1a7187196f8943ad77f517e374026,

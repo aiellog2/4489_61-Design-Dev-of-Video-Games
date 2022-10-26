@@ -7,13 +7,13 @@ using UnityEngine;
   {
       [SerializeField] private int maxHealth = 100;
 
-      private float health;
+      private int health;
 
 
 
       private void Start()
       {
-          health = GetComponent<BaseStats>().GetHealth();
+        health = maxHealth;
       }
 
       public void DealDamage(int damage)
@@ -26,10 +26,10 @@ using UnityEngine;
 
       }
 
-      public float GetPercentage()
-      {
-        return health = 100 * ( health / GetComponent<BaseStats>().GetHealth());
-      }
+      //public float GetPercentage()
+      //{
+      //  return health = 100 * ( health / GetComponent<BaseStats>().GetHealth());
+      //}
 
 
       /* public void TakeDamage(GameObject instigator, float damage)
