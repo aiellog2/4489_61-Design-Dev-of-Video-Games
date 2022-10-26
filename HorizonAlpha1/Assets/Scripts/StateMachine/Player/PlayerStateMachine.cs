@@ -10,6 +10,8 @@ using UnityEngine;
      [field: SerializeField] public Targeter Targeter { get; private set; }
      [field: SerializeField] public Animator Animator { get; private set; }
      [field: SerializeField] public Damage Weapon { get; private set; }
+     [field: SerializeField] public Health Health { get; private set; }
+     [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
      [field: SerializeField] public float FreeMovementSpeed { get; private set; }
      [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
      [field: SerializeField] public Force Force { get; private set; }
@@ -28,4 +30,24 @@ using UnityEngine;
 
           SwitchState(new PlayerMovementState(this));
       }
-  }
+
+    private void OnEnable()
+    {
+        Health.takeDamage += tookDamage;
+        Health.Die += Death;
+    }
+    private void OnDisable()
+    {
+        Health.takeDamage -= tookDamage;
+        Health.Die -= Death;
+
+    }
+    private void tookDamage()
+    {
+        SwitchState(new PlayerHitState(this));
+    }
+    private void Death()
+    {
+        SwitchState(new PlayerDieState(this));
+    }
+}
