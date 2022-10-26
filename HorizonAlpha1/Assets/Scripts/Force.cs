@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Force : MonoBehaviour
 {
 
     [SerializeField] private CharacterController controller;
     [SerializeField] private float slowDown = 0.3f;
+    [SerializeField] private NavMeshAgent agent;
 
     private Vector3 slowVelocity;
     private Vector3 hit;
@@ -27,6 +29,15 @@ public class Force : MonoBehaviour
         }
 
         hit = Vector3.SmoothDamp(hit, Vector3.zero, ref slowVelocity, slowDown);
+
+        if (agent != null)
+        {
+            if (hit.sqrMagnitude < 0.2f * 0.2f)
+            {
+                hit = Vector3.zero;
+                agent.enabled = true;
+            }
+        }
     }
 
     public void Jump(float jumpForce)
@@ -37,5 +48,9 @@ public class Force : MonoBehaviour
     public void AddForce(Vector3 force)
     {
         hit += force;
+        if(agent != null)
+        {
+            agent.enabled = false;
+        }
     }
 }

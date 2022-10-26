@@ -68,9 +68,6 @@ public class Targeter : MonoBehaviour
         cameraTargetGroup.AddMember(CurrentTarget.transform, 1f, 2f);
 
         return true;
-
-
-        return true;
     }
 
     public void Cancel()

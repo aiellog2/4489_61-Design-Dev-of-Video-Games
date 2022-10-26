@@ -39,7 +39,7 @@ public class ChasingState : EnemyBaseState
 
         FacePlayer();
 
-        stateMachine.Animator.SetFloat(SpeedHash, 1f, CrossFadeDuration, deltaTime);
+        stateMachine.Animator.SetFloat(SpeedHash, 1f, AnimatorDampTime, deltaTime);
     }
     public override void Exit()
     {
@@ -49,11 +49,14 @@ public class ChasingState : EnemyBaseState
 
     private void ChasePlayer(float deltaTime)
     {
-       stateMachine.Agent.destination = stateMachine.Player.transform.position;
+        if (stateMachine.Agent.isOnNavMesh)
+        {
+            stateMachine.Agent.destination = stateMachine.Player.transform.position;
 
-       Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.MoveSpeed, deltaTime);
-
-       stateMachine.Agent.velocity = stateMachine.Controller.velocity;
+            Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.MoveSpeed, deltaTime);
+        }
+       
+        stateMachine.Agent.velocity = stateMachine.Controller.velocity;
     }
 
     private bool InAttackRange()

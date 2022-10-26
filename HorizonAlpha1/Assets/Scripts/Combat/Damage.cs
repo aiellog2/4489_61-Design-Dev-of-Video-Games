@@ -30,9 +30,16 @@ using UnityEngine;
           {
               health.DealDamage(damage);
           }
+
+          if(other.TryGetComponent<Force>(out Force force))
+        {
+            Vector3 direction = ((other.transform.position - playerCollider.transform.position).normalized);
+            force.AddForce(direction * knockback);
+        }
       }
-      public void SetAttack(int damage)
+      public void SetAttack(int damage, float knockback )
       {
           this.damage = damage;
+          this.knockback = knockback;
       }
   }

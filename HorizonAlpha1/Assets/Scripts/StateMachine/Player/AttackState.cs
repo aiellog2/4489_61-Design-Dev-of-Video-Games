@@ -18,7 +18,7 @@ public AttackState(PlayerStateMachine stateMachine, int attackId) : base(stateMa
 
     public override void Enter()
     {
-        stateMachine.Weapon.SetAttack(attack.Damage);
+        stateMachine.Weapon.SetAttack(attack.Damage, attack.Knockback);
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
     }
     public override void Tick(float deltaTime)
@@ -28,7 +28,7 @@ public AttackState(PlayerStateMachine stateMachine, int attackId) : base(stateMa
 
         FaceTarget();
 
-        float normalizedTime = GetNormalizedTime();
+        float normalizedTime = GetNormalizedTime(stateMachine.Animator);
 
         if(normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {
@@ -86,23 +86,5 @@ public AttackState(PlayerStateMachine stateMachine, int attackId) : base(stateMa
 
         alreadyAppliedForce = true;
 
-    }
-    private float GetNormalizedTime()
-    {
-        AnimatorStateInfo currentInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
-        AnimatorStateInfo nextInfo = stateMachine.Animator.GetNextAnimatorStateInfo(0);
-
-        if(stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
-        {
-            return nextInfo.normalizedTime;
-        }
-        else if(!stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("Attack"))
-        {
-            return currentInfo.normalizedTime;
-        }
-        else
-        {
-            return 0f;
-        }
     }
 }

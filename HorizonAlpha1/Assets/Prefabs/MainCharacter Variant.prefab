@@ -673,6 +673,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fcea8108357ac4c7a9399cb16c68df8b,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcea8108357ac4c7a9399cb16c68df8b,
+        type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -1182,7 +1187,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e2d80e988ca7044948432feb02cf39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 4465663114815212736}
+  weaponlogic: {fileID: 0}
+--- !u!114 &4358742435009888490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460970229734453979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80dab2f698ffca64e85489ded46e88bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4437639756003708535}
+  controller: {fileID: 4437639756003708488}
 --- !u!114 &4437639756003708493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,6 +1219,8 @@ MonoBehaviour:
   <Targeter>k__BackingField: {fileID: 1119316884706568675}
   <Animator>k__BackingField: {fileID: 4437639756003708535}
   <Weapon>k__BackingField: {fileID: 111998768615224304}
+  <Health>k__BackingField: {fileID: 860455580311957504}
+  <Ragdoll>k__BackingField: {fileID: 4358742435009888490}
   <FreeMovementSpeed>k__BackingField: 16
   <TargetingMovementSpeed>k__BackingField: 15
   <Force>k__BackingField: {fileID: 4437639756003708531}
@@ -1211,6 +1232,7 @@ MonoBehaviour:
     <ComboAttackTimer>k__BackingField: 0.6
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 10
+    <Knockback>k__BackingField: 100
     <Damage>k__BackingField: 20
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
@@ -1218,6 +1240,7 @@ MonoBehaviour:
     <ComboAttackTimer>k__BackingField: 0.5
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 10
+    <Knockback>k__BackingField: 6
     <Damage>k__BackingField: 30
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
@@ -1225,6 +1248,7 @@ MonoBehaviour:
     <ComboAttackTimer>k__BackingField: 0
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 15
+    <Knockback>k__BackingField: 7
     <Damage>k__BackingField: 40
   <JumpForce>k__BackingField: 13
 --- !u!114 &4437639756003708494
@@ -1294,6 +1318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 4437639756003708488}
   slowDown: 0.1
+  agent: {fileID: 0}
 --- !u!4 &2237646910348224609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fcea8108357ac4c7a9399cb16c68df8b,

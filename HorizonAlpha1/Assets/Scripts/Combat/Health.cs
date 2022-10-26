@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,9 @@ using UnityEngine;
 
       private int health;
 
+      public event Action takeDamage;
 
+      public event Action Die;
 
       private void Start()
       {
@@ -22,8 +25,13 @@ using UnityEngine;
 
           health = Mathf.Max(health - damage, 0);
 
-          Debug.Log(health);
+          takeDamage?.Invoke();
 
+        if(health == 0)
+        {
+            Die?.Invoke();
+        }
+          Debug.Log(health);
       }
 
       //public float GetPercentage()
