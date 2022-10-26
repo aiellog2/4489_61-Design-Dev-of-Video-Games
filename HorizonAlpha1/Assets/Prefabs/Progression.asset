@@ -22,16 +22,16 @@ MonoBehaviour:
       - 200
       - 400
       - 700
-    health: []
   - characterClass: 1
     stats:
     - stat: 0
       levels:
       - 40
-    health: []
+      - 60
+      - 80
+      - 99
   - characterClass: 3
     stats:
     - stat: 0
       levels:
       - 30
-    health: []

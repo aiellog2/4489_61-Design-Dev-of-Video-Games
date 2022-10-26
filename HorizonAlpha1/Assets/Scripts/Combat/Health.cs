@@ -9,11 +9,10 @@ using UnityEngine;
 
       private float health;
 
-
-
-      private void Start()
+      public void Start()
       {
           health = GetComponent<BaseStats>().GetHealth();
+          Debug.Log("health: " + health);
       }
 
       public void DealDamage(int damage)

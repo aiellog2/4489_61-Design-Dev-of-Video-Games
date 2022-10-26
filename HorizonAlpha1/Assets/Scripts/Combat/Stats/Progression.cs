@@ -12,18 +12,18 @@ using UnityEngine;
         {
           if (progressionClass.characterClass == characterClass)
           {
-            //return progressionClass.health[level];
+            return progressionClass.health[level - 1];
           }
         }
-          return 0;
+        return 0;
       }
 
       [System.Serializable]
       class ProgressionCharacterClass
       {
         public CharacterClass characterClass;
-        public ProgressionStat[] stats;
-        //public float[] health;
+        //public ProgressionStat[] stats;
+        public float[] health;
       }
 
       [System.Serializable]

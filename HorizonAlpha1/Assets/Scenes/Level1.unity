@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 63503410}
   - component: {fileID: 63503413}
   - component: {fileID: 63503414}
+  - component: {fileID: 63503415}
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Untagged
@@ -412,6 +413,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &63503415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63503408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f4fb0267bc9432da92a92a85a75302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  characterClass: 1
+  progression: {fileID: 11400000, guid: 407a46b91f9744d029ce750c1a6e99a9, type: 2}
 --- !u!1001 &110147759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -497,12 +513,12 @@ PrefabInstance:
     - target: {fileID: 7616115618983097910, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.34917232
+      value: 0.34917238
       objectReference: {fileID: 0}
     - target: {fileID: 7616115618983097910, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.018878201
+      value: -0.018878205
       objectReference: {fileID: 0}
     - target: {fileID: 8695495544745205253, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
@@ -1793,7 +1809,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32822
+  m_Name: pb_Mesh43880
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3653,7 +3669,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32990
+  m_Name: pb_Mesh44048
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5245,7 +5261,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32744
+  m_Name: pb_Mesh43802
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6590,6 +6606,7 @@ GameObject:
   - component: {fileID: 1078829011}
   - component: {fileID: 1078829014}
   - component: {fileID: 1078829015}
+  - component: {fileID: 1078829016}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -6701,6 +6718,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &1078829016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078829009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f4fb0267bc9432da92a92a85a75302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  characterClass: 1
+  progression: {fileID: 11400000, guid: 407a46b91f9744d029ce750c1a6e99a9, type: 2}
 --- !u!43 &1098212353
 Mesh:
   m_ObjectHideFlags: 0
@@ -10823,7 +10855,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32888
+  m_Name: pb_Mesh43946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12601,6 +12633,7 @@ GameObject:
   - component: {fileID: 2099211848}
   - component: {fileID: 2099211851}
   - component: {fileID: 2099211852}
+  - component: {fileID: 2099211854}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -12717,3 +12750,18 @@ RectTransform:
   m_AnchoredPosition: {x: 172.6, y: -16.05}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2099211854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099211846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f4fb0267bc9432da92a92a85a75302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  characterClass: 1
+  progression: {fileID: 11400000, guid: 407a46b91f9744d029ce750c1a6e99a9, type: 2}
