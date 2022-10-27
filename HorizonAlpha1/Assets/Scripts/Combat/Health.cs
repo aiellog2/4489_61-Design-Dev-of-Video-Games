@@ -6,9 +6,9 @@ using UnityEngine;
 
   public class Health : MonoBehaviour
   {
-      [SerializeField] private int maxHealth = 100;
+      //[SerializeField] private int maxHealth = 100;
 
-      private int health;
+      public float health;
 
       public event Action takeDamage;
 
@@ -16,7 +16,9 @@ using UnityEngine;
 
       private void Start()
       {
-        health = maxHealth;
+        health = GetComponent<BaseStats>().GetStat(Stat.Health);
+        Debug.Log("start health: " + health);
+      //health = maxHealth;
       }
 
       public void DealDamage(int damage)
@@ -34,10 +36,10 @@ using UnityEngine;
           Debug.Log(health);
       }
 
-      //public float GetPercentage()
-      //{
-      //  return health = 100 * ( health / GetComponent<BaseStats>().GetHealth());
-      //}
+      public float GetPercentage()
+      {
+        return health; //100 * ( health / GetComponent<BaseStats>().GetStat(Stat.Health));
+      }
 
 
       /* public void TakeDamage(GameObject instigator, float damage)

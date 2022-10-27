@@ -1,5 +1,5 @@
 
-  enum Stat
+  public enum Stat
   {
     Health,
   }
