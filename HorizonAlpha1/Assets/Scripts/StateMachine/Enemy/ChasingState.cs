@@ -61,6 +61,8 @@ public class ChasingState : EnemyBaseState
 
     private bool InAttackRange()
     {
+        if (stateMachine.Player.Dead) { return false; }
+
         float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
         return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
     }

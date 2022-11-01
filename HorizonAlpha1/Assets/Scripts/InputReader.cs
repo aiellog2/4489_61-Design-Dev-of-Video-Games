@@ -9,13 +9,14 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public bool isAttacking { get; private set; }
+    public bool isBlocking { get; private set; }
     public Vector2 MovementValue { get; private set; }
 
     public event Action JumpEvent;
 
     public event Action DodgeEvent;
     public event Action TargetEvent;
-    public event Action CancelEvent;
+    
 
     private Controls controls;
 
@@ -68,11 +69,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         TargetEvent?.Invoke();
     }
 
-    public void OnCancelTarget(InputAction.CallbackContext context)
-    {
-        if (!context.performed) { return; }
-        CancelEvent?.Invoke();
-    }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -83,6 +79,18 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         else if (context.canceled)
         {
             isAttacking = false;
+        }
+    }
+
+    public void OnBlock(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            isBlocking = true;
+        }
+        else if (context.canceled)
+        {
+            isBlocking = false;
         }
     }
 }

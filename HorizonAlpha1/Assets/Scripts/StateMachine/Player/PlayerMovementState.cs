@@ -61,7 +61,7 @@ public class PlayerMovementState : PlayerBaseState
     {
         if (!stateMachine.Targeter.SelectTarget()) { return; }
 
-        stateMachine.SwitchState(new TargetingState(stateMachine));
+        stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
     private Vector3 CalculateMovement()
     {
