@@ -32,7 +32,7 @@ public abstract class PlayerBaseState : BaseState
     {
         if (stateMachine.Targeter.CurrentTarget != null)
         {
-            stateMachine.SwitchState(new TargetingState(stateMachine));
+            stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
         }
         else 
         { 

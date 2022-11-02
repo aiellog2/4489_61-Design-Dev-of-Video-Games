@@ -51,18 +51,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CancelTarget",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "ab3462e5-41cb-46a1-8152-3177c2e67344",
+                    "id": "61015add-46c0-446f-9083-cf976c483a78",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "Block",
                     "type": "Button",
-                    "id": "61015add-46c0-446f-9083-cf976c483a78",
+                    "id": "f0a678cf-7eec-429b-a4f1-6c6cf837b049",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -84,7 +84,7 @@
                 {
                     "name": "",
                     "id": "c3a10162-627b-490a-a07b-e694bb5130bb",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -226,23 +226,23 @@
                 },
                 {
                     "name": "",
-                    "id": "71b8de88-434c-4c80-a029-fa83c2253f7a",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "CancelTarget",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "999e592a-5a53-497f-b52d-d1137c392a7c",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5388113a-e6bf-43ee-b918-a49d20b608c8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

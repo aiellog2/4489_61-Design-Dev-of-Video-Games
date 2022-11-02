@@ -2901,9 +2901,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2931352087595365271}
-  m_LocalRotation: {x: -0, y: -0.9809001, z: -0, w: 0.1945126}
+  m_LocalRotation: {x: 0, y: -0.98090094, z: 0, w: 0.19450836}
   m_LocalPosition: {x: 202.8, y: -19.1813, z: 219.24}
-  m_LocalScale: {x: 3.5000002, y: 3.5, z: 3.5000002}
+  m_LocalScale: {x: 3.500001, y: 3.5, z: 3.500001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2931352087870470994}
@@ -2923,12 +2923,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.65
-  m_Radius: 0.25
+  m_Radius: 0.36
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.025
+  m_SkinWidth: 0.036
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.82, z: 0}
+  m_Center: {x: 0, y: 0.82, z: 0.15}
 --- !u!95 &2931352086253920767
 Animator:
   serializedVersion: 4
@@ -2973,7 +2973,7 @@ MonoBehaviour:
   <DetectionRange>k__BackingField: 35
   <AttackRange>k__BackingField: 3
   <AttackDamage>k__BackingField: 10
-  <AttackKnockback>k__BackingField: 15
+  <AttackKnockback>k__BackingField: 10
 --- !u!114 &2931352086253920765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2998,6 +2998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd89e5feac961a478098d3ed7da9677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!114 &2931352086253920763
 MonoBehaviour:
   m_ObjectHideFlags: 0
