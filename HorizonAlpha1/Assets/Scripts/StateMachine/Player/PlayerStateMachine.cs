@@ -14,16 +14,18 @@ using UnityEngine;
      [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
      [field: SerializeField] public float FreeMovementSpeed { get; private set; }
      [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
+     [field: SerializeField] public float RollDuration { get; private set; }
+     [field: SerializeField] public float RollDistance { get; private set; }
      [field: SerializeField] public Force Force { get; private set; }
      [field: SerializeField] public float RotationSmoothValue { get; private set; }
      [field: SerializeField] public AttackStats[] Attacks { get; private set; }
      [field: SerializeField] public float JumpForce { get; private set; }
      public Transform MainCameraTransform { get; private set; }
+    public float PreviousRollTime { get; private set; } = Mathf.NegativeInfinity;
 
 
-      private void Start()
+    private void Start()
       {
-          Cursor.lockState = CursorLockMode.Locked;
           Cursor.visible = false;
 
           MainCameraTransform = Camera.main.transform;

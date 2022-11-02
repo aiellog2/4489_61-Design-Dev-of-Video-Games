@@ -10,9 +10,13 @@ using UnityEngine;
 
       public float health;
 
+      private bool blocking;
+
       public event Action takeDamage;
 
       public event Action Die;
+
+      public bool Dead => health == 0;
 
       private void Start()
       {
@@ -20,10 +24,15 @@ using UnityEngine;
         Debug.Log("start health: " + health);
       //health = maxHealth;
       }
-
+    public void SetBlocking(bool blocking)
+    {
+        this.blocking = blocking;
+    }
       public void DealDamage(int damage)
       {
           if (health == 0) { return; }
+
+          if(blocking) {return; }
 
           health = Mathf.Max(health - damage, 0);
 

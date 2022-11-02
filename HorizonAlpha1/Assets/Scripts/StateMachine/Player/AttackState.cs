@@ -46,7 +46,7 @@ public AttackState(PlayerStateMachine stateMachine, int attackId) : base(stateMa
         {
             if (stateMachine.Targeter.CurrentTarget != null)
             {
-                stateMachine.SwitchState(new TargetingState(stateMachine));
+                stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
             }
             else
             {

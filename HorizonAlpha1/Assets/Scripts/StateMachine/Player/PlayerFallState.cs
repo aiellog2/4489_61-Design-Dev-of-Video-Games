@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerFallState : PlayerBaseState
 {
+    private readonly int FallHash = Animator.StringToHash("Fall");
+
     private const float CrossFadeDuration = 0.1f;
 
     private Vector3 momentum;
@@ -11,6 +13,8 @@ public class PlayerFallState : PlayerBaseState
     public PlayerFallState(PlayerStateMachine stateMachine) : base(stateMachine) { }
     public override void Enter()
     {
+        stateMachine.Animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
+
         momentum = stateMachine.Controller.velocity;
         momentum.y = 0f;
     }
@@ -20,14 +24,11 @@ public class PlayerFallState : PlayerBaseState
 
         if(stateMachine.Controller.isGrounded)
         {
-            stateMachine.SwitchState(new PlayerMovementState(stateMachine));
-            return;
+            BacktoMove();
         }
     }
     public override void Exit()
     {
 
     }
-
-
 }

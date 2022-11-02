@@ -31,6 +31,8 @@ public abstract class EnemyBaseState : BaseState
 
     protected bool IsInDetectionRange()
     {
+        if (stateMachine.Player.Dead) { return false; }
+
         float PlayerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
 
         return PlayerDistanceSqr <= stateMachine.DetectionRange * stateMachine.DetectionRange;
