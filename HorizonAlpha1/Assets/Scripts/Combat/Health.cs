@@ -16,13 +16,14 @@ using UnityEngine;
 
       public event Action Die;
 
+      public GameObject player;
       public bool Dead => health == 0;
 
       private void Start()
       {
+        player = GameObject.FindWithTag("Player");
         health = GetComponent<BaseStats>().GetStat(Stat.Health);
         Debug.Log("start health: " + health);
-      //health = maxHealth;
       }
     public void SetBlocking(bool blocking)
     {
@@ -41,6 +42,7 @@ using UnityEngine;
         if(health == 0)
         {
             Die?.Invoke();
+            AwardExperience();
         }
           Debug.Log(health);
       }
@@ -48,6 +50,14 @@ using UnityEngine;
       public float GetPercentage()
       {
         return health; //100 * ( health / GetComponent<BaseStats>().GetStat(Stat.Health));
+      }
+
+      private void AwardExperience()
+      {
+        Experience experience = player.GetComponent<Experience>();
+        if (experience == null) return;
+
+        experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
       }
 
 
@@ -59,14 +69,8 @@ using UnityEngine;
           Die();
           AwardExperience(instigator);
         }
-      }
-
-      private void AwardExperience(GameObject instigator)
-      {
-        Experience experience = instigator.GetComponent<Experience>();
-        if (experience == null) return;
-
-        experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
       } */
+
+
 
   }
