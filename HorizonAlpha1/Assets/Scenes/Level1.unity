@@ -193,7 +193,7 @@ PrefabInstance:
     - target: {fileID: 5677281228893986935, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
       propertyPath: startingLevel
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6890475831076186435, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
         type: 3}
@@ -210,6 +210,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.018878201
       objectReference: {fileID: 0}
+    - target: {fileID: 8695495544745205253, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
+        type: 3}
+      propertyPath: instigator
+      value: 
+      objectReference: {fileID: 2008277116}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acdf6d3794e43f47a62f3a0f5610a9f, type: 3}
 --- !u!1 &133114704
@@ -1400,6 +1405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TestEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681376446450195790, guid: 483a56f649d228f47be5210dc1f8109c,
+        type: 3}
+      propertyPath: characterClass
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 483a56f649d228f47be5210dc1f8109c, type: 3}
@@ -5226,7 +5236,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36740
+  m_Name: pb_Mesh44498
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12770,6 +12780,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2008277116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7429250831540985054, guid: 7acdf6d3794e43f47a62f3a0f5610a9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 110147759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2021649340
 GameObject:
   m_ObjectHideFlags: 0
