@@ -8,31 +8,41 @@ public class StaminaBar : MonoBehaviour
     public PlayerMovementState playerMovementState;
 
     public float stamina;
-    public float maxStamina;
+    float maxStamina;
 
     public Slider staminaBarUI;
-
     public float decreaseStamina;
-    // Start is called before the first frame update
+
     void Start()
     {
         maxStamina = stamina;
-        staminaBarUI.maxValue = maxStamina;  
+        staminaBarUI.maxValue = maxStamina;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            DecreaseStamina();
+        }
+        else if (stamina != maxStamina)
+        {
+            IncreaseStamina();
+        }
+        staminaBarUI.value = stamina;
     }
-
     public void DecreaseStamina()
     {
-        if(stamina != 0)
+        if (stamina >= 0)
+        {
             stamina -= decreaseStamina * Time.deltaTime;
+        }
     }
     public void IncreaseStamina()
     {
+        if (stamina <= maxStamina)
+        {
             stamina += decreaseStamina * Time.deltaTime;
+        }
     }
 }

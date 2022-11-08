@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerMovementState : PlayerBaseState
 {
@@ -13,8 +15,6 @@ public class PlayerMovementState : PlayerBaseState
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
 
-    public StaminaBar staminaBar;
-
     public PlayerMovementState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine) 
     {
         this.shouldFade = shouldFade;
@@ -22,6 +22,7 @@ public class PlayerMovementState : PlayerBaseState
  
     public override void Enter()
     {
+
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.TargetEvent += OnTarget;
 
@@ -47,19 +48,16 @@ public class PlayerMovementState : PlayerBaseState
 
         }
         if (Input.GetKey(KeyCode.LeftShift))
-        {
+        {    
             Move(movement * stateMachine.SprintMovementSpeed, deltaTime);
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
             MovementDirection(movement, deltaTime);
-            staminaBar.DecreaseStamina();
         }
-        else if(staminaBar.stamina != staminaBar.maxStamina)
-        {
+        else
+        { 
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0.5f, AnimatorDampTime, deltaTime);
-            MovementDirection(movement, deltaTime);
-            staminaBar.IncreaseStamina();
+            MovementDirection(movement, deltaTime);  
         }
-        staminaBar.staminaBarUI.value = staminaBar.stamina;
     }
     public override void Exit()
     {
