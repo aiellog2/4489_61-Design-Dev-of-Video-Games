@@ -3169,6 +3169,7 @@ MonoBehaviour:
   <Health>k__BackingField: {fileID: 4974841490128971871}
   <Ragdoll>k__BackingField: {fileID: 4974841490128971869}
   <FreeMovementSpeed>k__BackingField: 16
+  <SprintMovementSpeed>k__BackingField: 16.2
   <TargetingMovementSpeed>k__BackingField: 15
   <RollDuration>k__BackingField: 0.5
   <RollDistance>k__BackingField: 5
@@ -5359,6 +5360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 4974841490128971857}
+  sprite: {fileID: 0}
 --- !u!54 &4868849941470664559
 Rigidbody:
   m_ObjectHideFlags: 0

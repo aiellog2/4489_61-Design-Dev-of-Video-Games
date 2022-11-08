@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovementState : PlayerBaseState
 {
@@ -10,9 +11,9 @@ public class PlayerMovementState : PlayerBaseState
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
 
     private const float AnimatorDampTime = 0.1f;
-
     private const float CrossFadeDuration = 0.1f;
 
+    public StaminaBar staminaBar;
 
     public PlayerMovementState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine) 
     {
@@ -21,12 +22,10 @@ public class PlayerMovementState : PlayerBaseState
  
     public override void Enter()
     {
-
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.TargetEvent += OnTarget;
 
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
-  
     }
     public override void Tick(float deltaTime)
     {
@@ -42,15 +41,25 @@ public class PlayerMovementState : PlayerBaseState
         Move(movement * stateMachine.FreeMovementSpeed, deltaTime);
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
-        {
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
-                
+        {        
+            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);    
             return;
 
         }
-
-        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
-        MovementDirection(movement, deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Move(movement * stateMachine.SprintMovementSpeed, deltaTime);
+            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
+            MovementDirection(movement, deltaTime);
+            staminaBar.DecreaseStamina();
+        }
+        else if(staminaBar.stamina != staminaBar.maxStamina)
+        {
+            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0.5f, AnimatorDampTime, deltaTime);
+            MovementDirection(movement, deltaTime);
+            staminaBar.IncreaseStamina();
+        }
+        staminaBar.staminaBarUI.value = staminaBar.stamina;
     }
     public override void Exit()
     {

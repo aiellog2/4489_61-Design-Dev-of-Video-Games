@@ -9,7 +9,8 @@ using UnityEngine;
       [SerializeField] private Collider playerCollider;
 
       private int damage;
-      private float knockback; 
+      private float knockback;
+      public SpriteRenderer sprite;
 
       private List<Collider> CollidedWith = new List<Collider>();
 

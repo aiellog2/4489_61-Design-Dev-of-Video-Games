@@ -16,7 +16,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action DodgeEvent;
     public event Action TargetEvent;
 
-
     private Controls controls;
 
     private void Start()
@@ -38,7 +37,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         {
             return;
         }
-
         JumpEvent?.Invoke();
     }
 

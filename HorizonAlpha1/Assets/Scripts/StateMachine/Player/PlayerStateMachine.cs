@@ -13,6 +13,7 @@ using UnityEngine;
      [field: SerializeField] public Health Health { get; private set; }
      [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
      [field: SerializeField] public float FreeMovementSpeed { get; private set; }
+     [field: SerializeField] public float SprintMovementSpeed { get; private set; }
      [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
      [field: SerializeField] public float RollDuration { get; private set; }
      [field: SerializeField] public float RollDistance { get; private set; }
