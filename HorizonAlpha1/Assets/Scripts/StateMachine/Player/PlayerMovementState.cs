@@ -22,9 +22,9 @@ public class PlayerMovementState : PlayerBaseState
  
     public override void Enter()
     {
-
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.TargetEvent += OnTarget;
+        
 
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
     }
@@ -42,21 +42,19 @@ public class PlayerMovementState : PlayerBaseState
         Move(movement * stateMachine.FreeMovementSpeed, deltaTime);
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
-        {        
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);    
+        {
+            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
             return;
-
         }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {    
-            Move(movement * stateMachine.SprintMovementSpeed, deltaTime);
+           
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
+
             MovementDirection(movement, deltaTime);
-        }
-        else
-        { 
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0.5f, AnimatorDampTime, deltaTime);
-            MovementDirection(movement, deltaTime);  
+
+        if (stateMachine.InputReader.isSprinting)
+        {
+            stateMachine.SwitchState(new PlayerSprintState(stateMachine));
+            return;
         }
     }
     public override void Exit()
@@ -86,7 +84,7 @@ public class PlayerMovementState : PlayerBaseState
 
     private void MovementDirection(Vector3 movement, float deltaTime)
     {
-        stateMachine.transform.rotation = Quaternion.Lerp(
+            stateMachine.transform.rotation = Quaternion.Lerp(
             stateMachine.transform.rotation,
             Quaternion.LookRotation(movement),
             deltaTime * stateMachine.RotationSmoothValue);
