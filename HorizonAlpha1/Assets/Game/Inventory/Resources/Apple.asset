@@ -16,4 +16,4 @@ MonoBehaviour:
   displayName: Apple
   description: Tasty fruit
   icon: {fileID: 21300000, guid: 080650c15bc504cfeb46e69aa72038df, type: 3}
-  stackable: 0
+  stackable: 1
