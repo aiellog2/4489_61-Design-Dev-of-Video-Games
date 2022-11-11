@@ -22,18 +22,31 @@ public class PlayerSprintState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        if(stateMachine.InputReader.isSprinting)
-        {
-            staminaBar.DecreaseStamina();
+
+
+        if (stateMachine.InputReader.isSprinting)
+        {  
+            stateMachine.StaminaBar.DecreaseStamina();
+
+            if(stateMachine.StaminaBar.stamina <= 0)
+            {
+                stateMachine.SwitchState(new PlayerMovementState(stateMachine));
+                return;
+            }
         }
+
         Vector3 movement = CalculateMovement();
+
         Move(movement * stateMachine.SprintMovementSpeed, deltaTime);
-        MovementDirection(movement, deltaTime);
-        if(!stateMachine.InputReader.isSprinting)
+
+        if (!stateMachine.InputReader.isSprinting)
         {
             stateMachine.SwitchState(new PlayerMovementState(stateMachine));
             return;
         }
+
+
+        MovementDirection(movement, deltaTime);
     }
     public override void Exit()
     {

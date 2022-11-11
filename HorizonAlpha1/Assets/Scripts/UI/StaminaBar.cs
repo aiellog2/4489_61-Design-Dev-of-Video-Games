@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class StaminaBar : MonoBehaviour
 {
-
-    private float stamina;
+    public float stamina;
     [SerializeField] private float maxStamina;
     [SerializeField] private float staminaCost;
 
     public Slider staminaBarUI;
+    
+    
 
     private void Start()
     {
@@ -23,9 +24,16 @@ public class StaminaBar : MonoBehaviour
     }
     public void DecreaseStamina()
     {
-        if (stamina >= maxStamina)
+        if (stamina >= 0)
         {
             stamina -= staminaCost * Time.deltaTime;
+        }
+    }
+    public void IncreaseStamina()
+    {
+        if (stamina <= maxStamina)
+        {
+            stamina += staminaCost * Time.deltaTime;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEditor.Timeline.Actions;
 
 public class PlayerMovementState : PlayerBaseState
 {
@@ -19,17 +20,17 @@ public class PlayerMovementState : PlayerBaseState
     {
         this.shouldFade = shouldFade;
     }
- 
     public override void Enter()
     {
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.TargetEvent += OnTarget;
-        
 
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
     }
     public override void Tick(float deltaTime)
     {
+        stateMachine.StaminaBar.IncreaseStamina();
+
 
         if (stateMachine.InputReader.isAttacking)
         {
@@ -46,16 +47,16 @@ public class PlayerMovementState : PlayerBaseState
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
             return;
         }
-           
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
-
-            MovementDirection(movement, deltaTime);
-
+        
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
+        
         if (stateMachine.InputReader.isSprinting)
         {
             stateMachine.SwitchState(new PlayerSprintState(stateMachine));
             return;
         }
+
+        MovementDirection(movement, deltaTime);
     }
     public override void Exit()
     {
