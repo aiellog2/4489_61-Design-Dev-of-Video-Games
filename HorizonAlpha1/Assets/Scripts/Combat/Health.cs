@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
-  public class Health : MonoBehaviour
+public class Health : MonoBehaviour
   {
       //[SerializeField] private int maxHealth = 100;
 
@@ -23,6 +24,7 @@ using UnityEngine;
       {
         player = GameObject.FindWithTag("Player");
         health = GetComponent<BaseStats>().GetStat(Stat.Health);
+
         Debug.Log("start health: " + health);
       }
     public void SetBlocking(bool blocking)
@@ -39,7 +41,7 @@ using UnityEngine;
 
           takeDamage?.Invoke();
 
-        if(health == 0)
+        if (health == 0)
         {
             Die?.Invoke();
             AwardExperience();
