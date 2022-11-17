@@ -29,7 +29,7 @@ public class PlayerMovementState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        stateMachine.StaminaBar.IncreaseStamina();
+        //stateMachine.StaminaBar.IncreaseStamina();
 
 
         if (stateMachine.InputReader.isAttacking)
@@ -49,12 +49,12 @@ public class PlayerMovementState : PlayerBaseState
         }
         
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
-        
-        if (stateMachine.InputReader.isSprinting)
-        {
-            stateMachine.SwitchState(new PlayerSprintState(stateMachine));
-            return;
-        }
+
+            if (stateMachine.InputReader.isSprinting && stateMachine.StaminaBar.stamina > 0)
+            {
+                stateMachine.SwitchState(new PlayerSprintState(stateMachine));
+                return;
+            }
 
         MovementDirection(movement, deltaTime);
     }

@@ -29,7 +29,7 @@ public class PlayerTargetingState : PlayerBaseState
             stateMachine.SwitchState(new AttackState(stateMachine, 0));
             return;
         }
-        if(stateMachine.InputReader.isBlocking)
+        if(stateMachine.InputReader.isBlocking && stateMachine.StaminaBar.stamina > 0)
         {
             stateMachine.SwitchState(new PlayerBlockState(stateMachine));
             return;

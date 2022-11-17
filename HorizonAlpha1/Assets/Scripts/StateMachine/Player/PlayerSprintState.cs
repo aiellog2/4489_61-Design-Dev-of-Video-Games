@@ -9,35 +9,32 @@ public class PlayerSprintState : PlayerBaseState
     private readonly int SprintHash = Animator.StringToHash("Sprint");
 
     private const float CrossFadeDuration = 0.1f;
+    private bool outOfStamina;
 
     public PlayerSprintState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
-
+    
     public override void Enter()
     {
-        stateMachine.InputReader.JumpEvent += OnJump;
-        stateMachine.InputReader.TargetEvent += OnTarget;
+            stateMachine.InputReader.JumpEvent += OnJump;
+            stateMachine.InputReader.TargetEvent += OnTarget;
 
-        stateMachine.Animator.CrossFadeInFixedTime(SprintHash, CrossFadeDuration);
+            stateMachine.Animator.CrossFadeInFixedTime(SprintHash, CrossFadeDuration);   
     }
     public override void Tick(float deltaTime)
     {
-
+        Vector3 movement = CalculateMovement();
+        Move(movement * stateMachine.SprintMovementSpeed, deltaTime);
 
         if (stateMachine.InputReader.isSprinting)
-        {  
+        {
             stateMachine.StaminaBar.DecreaseStamina();
-
-            if(stateMachine.StaminaBar.stamina <= 0)
+            if (stateMachine.StaminaBar.stamina <= 0)
             {
                 stateMachine.SwitchState(new PlayerMovementState(stateMachine));
                 return;
             }
         }
-
-        Vector3 movement = CalculateMovement();
-
-        Move(movement * stateMachine.SprintMovementSpeed, deltaTime);
 
         if (!stateMachine.InputReader.isSprinting)
         {
@@ -45,8 +42,7 @@ public class PlayerSprintState : PlayerBaseState
             return;
         }
 
-
-        MovementDirection(movement, deltaTime);
+            MovementDirection(movement, deltaTime);
     }
     public override void Exit()
     {
