@@ -24,7 +24,9 @@ public class PlayerTargetingState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        if(stateMachine.InputReader.isAttacking)
+        stateMachine.StaminaBar.IncreaseStamina();
+
+        if (stateMachine.InputReader.isAttacking && stateMachine.StaminaBar.stamina > 0)
         {
             stateMachine.SwitchState(new AttackState(stateMachine, 0));
             return;

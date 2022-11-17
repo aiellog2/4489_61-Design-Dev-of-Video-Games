@@ -29,10 +29,9 @@ public class PlayerMovementState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        //stateMachine.StaminaBar.IncreaseStamina();
+        stateMachine.StaminaBar.IncreaseStamina();
 
-
-        if (stateMachine.InputReader.isAttacking)
+        if (stateMachine.InputReader.isAttacking && stateMachine.StaminaBar.stamina > 0)
         {
             stateMachine.SwitchState(new AttackState(stateMachine, 0));
             return;
@@ -57,6 +56,7 @@ public class PlayerMovementState : PlayerBaseState
             }
 
         MovementDirection(movement, deltaTime);
+
     }
     public override void Exit()
     {
