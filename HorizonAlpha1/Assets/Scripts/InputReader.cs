@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
-    public StaminaBar staminaBar;
+    private StaminaBar staminaBar;
     public bool isAttacking { get; private set; }
     public bool isSprinting { get; private set; }
     public bool isBlocking { get; private set; }
