@@ -2973,7 +2973,7 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 13
   <DetectionRange>k__BackingField: 35
   <AttackRange>k__BackingField: 3
-  <AttackDamage>k__BackingField: 10
+  <AttackDamage>k__BackingField: 20
   <AttackKnockback>k__BackingField: 10
 --- !u!114 &2931352086253920765
 MonoBehaviour:
@@ -2999,6 +2999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd89e5feac961a478098d3ed7da9677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   health: 0
   player: {fileID: 0}
 --- !u!114 &2931352086253920763
