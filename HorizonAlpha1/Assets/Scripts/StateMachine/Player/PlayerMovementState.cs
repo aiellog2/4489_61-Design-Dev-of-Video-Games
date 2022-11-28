@@ -31,8 +31,7 @@ public class PlayerMovementState : PlayerBaseState
     {
         stateMachine.StaminaBar.IncreaseStamina();
 
-
-        if (stateMachine.InputReader.isAttacking)
+        if (stateMachine.InputReader.isAttacking && stateMachine.StaminaBar.stamina > 0)
         {
             stateMachine.SwitchState(new AttackState(stateMachine, 0));
             return;
@@ -49,14 +48,15 @@ public class PlayerMovementState : PlayerBaseState
         }
         
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
-        
-        if (stateMachine.InputReader.isSprinting)
-        {
-            stateMachine.SwitchState(new PlayerSprintState(stateMachine));
-            return;
-        }
+
+            if (stateMachine.InputReader.isSprinting && stateMachine.StaminaBar.stamina > 0)
+            {
+                stateMachine.SwitchState(new PlayerSprintState(stateMachine));
+                return;
+            }
 
         MovementDirection(movement, deltaTime);
+
     }
     public override void Exit()
     {

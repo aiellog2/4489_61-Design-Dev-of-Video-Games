@@ -25,7 +25,6 @@ public class PlayerBlockState : PlayerBaseState
             stateMachine.StaminaBar.DecreaseStamina();
             if (stateMachine.StaminaBar.stamina <= 0)
             {
-                
                 stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
                 return;
             }

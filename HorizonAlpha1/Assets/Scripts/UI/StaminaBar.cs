@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class StaminaBar : MonoBehaviour
 {
     public float stamina;
+
     [SerializeField] private float maxStamina;
     [SerializeField] private float staminaCost;
 
     public Slider staminaBarUI;
-    
-    
+
+    private AttackStats attack;
+
+    private Coroutine regen;
 
     private void Start()
     {
@@ -27,13 +30,26 @@ public class StaminaBar : MonoBehaviour
         if (stamina >= 0)
         {
             stamina -= staminaCost * Time.deltaTime;
+            staminaBarUI.value = stamina;
+
+            if(regen != null)
+            {
+                StopCoroutine(regen);
+            }
+
+            regen = StartCoroutine(IncreaseStamina());
         }
     }
-    public void IncreaseStamina()
+    public IEnumerator IncreaseStamina()
     {
-        if (stamina <= maxStamina)
+        yield return new WaitForSeconds(2);
+
+        while(stamina < maxStamina)
         {
-            stamina += staminaCost * Time.deltaTime;
+            stamina += maxStamina / 50;
+            staminaBarUI.value = stamina;
+            yield return new WaitForSeconds(0.1f);
         }
+        regen = null;
     }
 }
