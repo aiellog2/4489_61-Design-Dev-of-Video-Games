@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ using UnityEngine;
       [SerializeField] int startingLevel = 1;
       [SerializeField] CharacterClass characterClass;
       [SerializeField] Progression progression = null;
+      [SerializeField] GameObject levelUpParticleEffect = null;
+
+      public event Action onLevelUp;
 
       int currentLevel = 0;
 
@@ -22,21 +26,26 @@ using UnityEngine;
         }
       }
 
-
-
       private void UpdateLevel()
       {
         int newLevel = CalculateLevel();
         if (newLevel > currentLevel)
         {
           currentLevel = newLevel;
-          print("Leveled up!");
+          LevelUpEffect();
+          onLevelUp();
+          Debug.Log("ON LEVEL UP!!");
         }
+      }
+
+      private void LevelUpEffect()
+      {
+        Instantiate(levelUpParticleEffect, transform);
       }
 
       public float GetStat(Stat stat)
       {
-        return progression.GetStat(stat, characterClass, startingLevel);
+        return progression.GetStat(stat, characterClass, GetLevel()); // + GetAdditiveModifier(stat);
       }
 
       public int GetLevel()
@@ -48,12 +57,15 @@ using UnityEngine;
         return currentLevel;
       }
 
+      /*private float GetAdditiveModifier(Stat stat)
+      {
+
+      }*/
 
       public int CalculateLevel()
       {
         Experience experience = GetComponent<Experience>();
         if (experience == null) return startingLevel;
-
 
         float currentXP = GetComponent<Experience>().GetPoints();
         int penultimateLevel = progression.GetLevels(Stat.ExperienceToLevelUp, characterClass);
