@@ -9,22 +9,72 @@ using UnityEditor.Timeline.Actions;
 
 public class NPC : MonoBehaviour
 {
-    StateMachine stateMachine;
-    
+    public GameObject dialoguePanel;
+    public Text dialogueText;
+    public string[] dialogue;
+
+    private int index;
+
+    public float wordSpeed;
     public bool playerCollided;
-     
+
+    public event Action<NPC> OnDestroyed;
+
+    private void OnDestroy()
+    {
+        OnDestroyed?.Invoke(this);
+    }
+    void Update()
+    {
+        if(playerCollided && Input.GetKeyDown(KeyCode.E))
+        {
+            if(dialoguePanel.activeInHierarchy)
+            {
+                ZeroText();
+            }
+            else
+            {
+                dialoguePanel.SetActive(true);
+                StartCoroutine(Typing());
+            }
+        }
+    }
+    IEnumerator Typing()
+    {
+        foreach(char letter in dialogue[index].ToCharArray())
+        {
+            dialogueText.text+=letter;
+            yield return new WaitForSeconds(wordSpeed);
+        }
+    }
+    public void NextLine()
+    {
+        if(index < dialogue.Length - 1)
+        {
+            index++;
+            dialogueText.text="";
+            StartCoroutine(Typing());
+        }
+    }
+    public void ZeroText()
+    {
+        dialogueText.text = "";
+        index = 0;
+        dialoguePanel.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
-            
+            playerCollided = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            
+            playerCollided = false;
+            ZeroText();
         }
     }
 }

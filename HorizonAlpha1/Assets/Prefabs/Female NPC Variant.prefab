@@ -188,7 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7585f6114fa1846b44257e862d8cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHitWall: 0
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogue:
+  - Hello Motherfucker!
+  wordSpeed: 0.07
+  playerCollided: 0
 --- !u!114 &7521535292327914247
 MonoBehaviour:
   m_ObjectHideFlags: 0
