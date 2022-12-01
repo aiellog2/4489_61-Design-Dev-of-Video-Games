@@ -17,6 +17,6 @@ using System;
       // Update is called once per frame
       void Update()
      {
-         GetComponent<TMP_Text>().text = String.Format("{0:0.0}", health.GetPercentage());
+         GetComponent<TMP_Text>().text = String.Format("{0:0}/{1:0}", health.GetCurrentHealth(), health.GetMaxHealth());
      }
  }

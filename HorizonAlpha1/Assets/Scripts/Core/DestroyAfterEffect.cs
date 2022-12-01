@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace InventoryExample.Core
-{
     public class DestroyAfterEffect : MonoBehaviour
     {
         [SerializeField] GameObject targetToDestroy = null;
@@ -23,4 +21,3 @@ namespace InventoryExample.Core
             }
         }
     }
-}
