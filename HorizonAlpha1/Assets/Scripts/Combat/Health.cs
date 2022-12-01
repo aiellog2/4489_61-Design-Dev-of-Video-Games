@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
   {
       //[SerializeField] private int maxHealth = 100;
-
       public float maxHealth;
       public float health;
 
