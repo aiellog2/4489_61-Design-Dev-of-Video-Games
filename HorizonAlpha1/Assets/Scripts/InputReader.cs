@@ -8,9 +8,11 @@ using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
+    private StaminaBar staminaBar;
     public bool isAttacking { get; private set; }
     public bool isSprinting { get; private set; }
     public bool isBlocking { get; private set; }
+
     public Vector2 MovementValue { get; private set; }
 
     public event Action JumpEvent;

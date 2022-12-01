@@ -5,44 +5,51 @@ using UnityEngine.UI;
 
 public class StaminaBar : MonoBehaviour
 {
-    public PlayerMovementState playerMovementState;
-
     public float stamina;
-    float maxStamina;
+
+    [SerializeField] private float maxStamina;
+    [SerializeField] private float staminaCost;
 
     public Slider staminaBarUI;
-    public float decreaseStamina;
 
-    void Start()
+    private AttackStats attack;
+
+    private Coroutine regen;
+
+    private void Start()
     {
-        maxStamina = stamina;
+        stamina = maxStamina;
         staminaBarUI.maxValue = maxStamina;
     }
-
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            DecreaseStamina();
-        }
-        else if (stamina != maxStamina)
-        {
-            IncreaseStamina();
-        }
         staminaBarUI.value = stamina;
     }
     public void DecreaseStamina()
     {
         if (stamina >= 0)
         {
-            stamina -= decreaseStamina * Time.deltaTime;
+            stamina -= staminaCost * Time.deltaTime;
+            staminaBarUI.value = stamina;
+
+            if(regen != null)
+            {
+                StopCoroutine(regen);
+            }
+
+            regen = StartCoroutine(IncreaseStamina());
         }
     }
-    public void IncreaseStamina()
+    public IEnumerator IncreaseStamina()
     {
-        if (stamina <= maxStamina)
+        yield return new WaitForSeconds(2);
+
+        while(stamina < maxStamina)
         {
-            stamina += decreaseStamina * Time.deltaTime;
+            stamina += maxStamina / 50;
+            staminaBarUI.value = stamina;
+            yield return new WaitForSeconds(0.1f);
         }
+        regen = null;
     }
 }

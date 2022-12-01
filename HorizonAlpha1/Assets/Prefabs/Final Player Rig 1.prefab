@@ -1272,6 +1272,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+
     - target: {fileID: 4974841490128971859, guid: bdc8d53108733474982b3bd363f03f97,
         type: 3}
       propertyPath: m_Enabled
@@ -1282,17 +1283,7 @@ PrefabInstance:
       propertyPath: levelUpParticleEffect
       value: 
       objectReference: {fileID: 1245207748567960067, guid: 8bd8f4834e4824493a1e150cb7bd37e9,
-        type: 3}
-    - target: {fileID: 5317420937814255331, guid: bdc8d53108733474982b3bd363f03f97,
-        type: 3}
-      propertyPath: m_Name
-      value: FinalMainCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 9090081539162912888, guid: bdc8d53108733474982b3bd363f03f97,
-        type: 3}
-      propertyPath: cameraTargetGroup
-      value: 
-      objectReference: {fileID: 5053785912925537959}
+        type: 3}   
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdc8d53108733474982b3bd363f03f97, type: 3}
 --- !u!4 &4731065493138857933 stripped

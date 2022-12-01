@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
-  public class Health : MonoBehaviour
+public class Health : MonoBehaviour
   {
       //[SerializeField] private int maxHealth = 100;
       [SerializeField] float regenerationPercentage = 70;
 
+      public float maxHealth;
       public float health;
 
       private bool blocking;
@@ -24,8 +26,10 @@ using UnityEngine;
       {
         GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
         player = GameObject.FindWithTag("Player");
-        health = GetComponent<BaseStats>().GetStat(Stat.Health);
-        Debug.Log("start health: " + health);
+        maxHealth = GetComponent<BaseStats>().GetStat(Stat.Health);
+        health = maxHealth;
+
+        Debug.Log("start health: " + maxHealth);
       }
 
       public void SetBlocking(bool blocking)
@@ -44,13 +48,22 @@ using UnityEngine;
 
           takeDamage?.Invoke();
 
-        if(health == 0)
+        if (health == 0)
         {
             Die?.Invoke();
             AwardExperience();
         }
           Debug.Log(health);
       }
+    public void Heal(float amount)
+    {
+        if (health == 0) { return; }
+
+        if (blocking) { return; }
+
+        health = Mathf.Max(health + amount);
+        health = Mathf.Min(health, maxHealth);
+    }
 
       public float GetCurrentHealth()
       {

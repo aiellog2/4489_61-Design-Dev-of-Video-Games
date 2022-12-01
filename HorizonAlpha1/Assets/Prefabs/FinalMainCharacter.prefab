@@ -2958,7 +2958,8 @@ GameObject:
   - component: {fileID: 4974841490128971866}
   - component: {fileID: 4974841490128971867}
   - component: {fileID: 4974841490128971859}
-  - component: {fileID: 6992216106729781725}
+  - component: {fileID: 2291658369561621389}
+  - component: {fileID: 6594192500551778599}
   m_Layer: 6
   m_Name: FinalMainCharacter
   m_TagString: Player
@@ -3168,16 +3169,15 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 4974841490128971879}
   <Weapon>k__BackingField: {fileID: 5109484014139197104}
   <Health>k__BackingField: {fileID: 4974841490128971871}
+  <StaminaBar>k__BackingField: {fileID: 0}
+  <HealthBar>k__BackingField: {fileID: 0}
   <Ragdoll>k__BackingField: {fileID: 4974841490128971869}
-  <FreeMovementSpeed>k__BackingField: 16
-  <SprintMovementSpeed>k__BackingField: 15.5
-  <Stamina>k__BackingField: 0
-  <DecreaseStamina>k__BackingField: 0
+  <FreeMovementSpeed>k__BackingField: 14
+  <SprintMovementSpeed>k__BackingField: 17
   <TargetingMovementSpeed>k__BackingField: 15
   <RollDuration>k__BackingField: 0.5
   <RollDistance>k__BackingField: 5
   <Force>k__BackingField: {fileID: 4974841490128971878}
-  <StaminaBar>k__BackingField: {fileID: 0}
   <RotationSmoothValue>k__BackingField: 10
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Attack1
@@ -3188,6 +3188,7 @@ MonoBehaviour:
     <Force>k__BackingField: 8
     <Knockback>k__BackingField: 5
     <Damage>k__BackingField: 20
+    <StaminaCost>k__BackingField: 0
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
@@ -3196,6 +3197,7 @@ MonoBehaviour:
     <Force>k__BackingField: 8
     <Knockback>k__BackingField: 6
     <Damage>k__BackingField: 30
+    <StaminaCost>k__BackingField: 0
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
@@ -3204,6 +3206,7 @@ MonoBehaviour:
     <Force>k__BackingField: 12
     <Knockback>k__BackingField: 7
     <Damage>k__BackingField: 40
+    <StaminaCost>k__BackingField: 0
   <JumpForce>k__BackingField: 13
 --- !u!114 &4974841490128971867
 MonoBehaviour:
@@ -3217,6 +3220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a06b50cd1a334942b6ed35910b2166d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaBar: {fileID: 0}
 --- !u!114 &4974841490128971859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3224,12 +3228,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5317420937814255331}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cebebfc754c154ea2a301c66504e0526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6992216106729781725
+--- !u!114 &2291658369561621389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3241,10 +3245,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4de00030a83994e8f2f23b0eeb5321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stamina: 100
-  blockCost: 30
+  stamina: 0
+  maxStamina: 100
+  staminaCost: 20
   staminaBarUI: {fileID: 0}
-  decreaseStamina: 30
+--- !u!114 &6594192500551778599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5317420937814255331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9577fa9a9b10c5d4d928bb4ca37a1713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 4974841490128971871}
+  healthBarUI: {fileID: 0}
 --- !u!1 &5336536202277635512
 GameObject:
   m_ObjectHideFlags: 0

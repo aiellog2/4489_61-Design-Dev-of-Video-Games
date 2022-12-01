@@ -20,7 +20,17 @@ public class PlayerBlockState : PlayerBaseState
     {
         Move(deltaTime);
 
-        if(!stateMachine.InputReader.isBlocking)
+        if (stateMachine.InputReader.isBlocking)
+        {
+            stateMachine.StaminaBar.DecreaseStamina();
+            if (stateMachine.StaminaBar.stamina <= 0)
+            {
+                stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+                return;
+            }
+        }
+
+        if (!stateMachine.InputReader.isBlocking)
         {
             stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
             return;

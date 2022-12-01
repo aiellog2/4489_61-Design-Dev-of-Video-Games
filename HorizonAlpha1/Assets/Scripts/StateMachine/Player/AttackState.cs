@@ -52,7 +52,6 @@ public AttackState(PlayerStateMachine stateMachine, int attackId) : base(stateMa
             {
                 stateMachine.SwitchState(new PlayerMovementState(stateMachine));
             }
-
         }
 
         previousFrameTime = normalizedTime;

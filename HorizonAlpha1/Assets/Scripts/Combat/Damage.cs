@@ -41,7 +41,7 @@ using UnityEngine;
             force.AddForce(direction * knockback);
         }
       }
-      public void SetAttack(int damage, float knockback )
+      public void SetAttack(int damage, float knockback)
       {
           this.damage = damage;
           this.knockback = knockback;
