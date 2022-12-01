@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +8,7 @@ using UnityEngine;
   {
       [SerializeField] private Collider playerCollider;
 
-
-      //private float damageMultiplier = GetComponent<BaseStats>().GetStat(Stat.Damage);
-      private float damage;
+      private int damage;
       private float knockback;
       public SpriteRenderer sprite;
 
