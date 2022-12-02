@@ -12,13 +12,16 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public bool isAttacking { get; private set; }
     public bool isSprinting { get; private set; }
     public bool isBlocking { get; private set; }
+    public bool isInteracting { get; private set; }
+
+
+
 
     public Vector2 MovementValue { get; private set; }
 
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
-    public event Action InteractEvent;
 
     private Controls controls;
 
@@ -103,10 +106,15 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             isBlocking = false;
         }
     }
-
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (!context.performed) { return; }
-        InteractEvent?.Invoke();
+        if (controls.Player.Interact.triggered && controls.Player.Interact.ReadValue<float>() > 0)
+        {
+            isInteracting = true;
+        }
+        else
+        {
+            isInteracting = false;
+        }
     }
 }

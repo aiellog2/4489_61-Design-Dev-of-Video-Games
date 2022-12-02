@@ -5,9 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEditor.Timeline.Actions;
+using UnityEditor.ShaderGraph;
 
 public class PlayerMovementState : PlayerBaseState
 {
+
+    public Controls controls;
     private bool shouldFade;
 
     private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
@@ -21,18 +24,24 @@ public class PlayerMovementState : PlayerBaseState
     {
         this.shouldFade = shouldFade;
     }
+    
     public override void Enter()
     {
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.TargetEvent += OnTarget;
-        stateMachine.InputReader.InteractEvent += OnInteract;
-
-
+        
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
     }
     public override void Tick(float deltaTime)
     {
         stateMachine.StaminaBar.IncreaseStamina();
+
+        if (stateMachine.NPC.playerCollided == true && Input.GetKeyDown(KeyCode.E))
+        {
+            stateMachine.Wall.SetActive(false);
+            stateMachine.SwitchState(new PlayerDialogState(stateMachine));
+            
+        }
 
         if (stateMachine.InputReader.isAttacking && stateMachine.StaminaBar.stamina > 0)
         {
@@ -65,17 +74,12 @@ public class PlayerMovementState : PlayerBaseState
     {
         stateMachine.InputReader.JumpEvent -= OnJump;
         stateMachine.InputReader.TargetEvent -= OnTarget;
-        stateMachine.InputReader.InteractEvent -= OnInteract;
     }
     private void OnTarget()
     {
         if (!stateMachine.Targeter.SelectTarget()) { return; }
 
         stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
-    }
-    private void OnInteract()
-    {
-        stateMachine.SwitchState(new PlayerDialogState(stateMachine));
     }
     private Vector3 CalculateMovement()
     {

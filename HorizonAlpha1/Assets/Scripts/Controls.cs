@@ -301,7 +301,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c185edb5-bcdc-47dd-a09b-5e158295646c"",
                     ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
                     ""action"": ""Interact"",

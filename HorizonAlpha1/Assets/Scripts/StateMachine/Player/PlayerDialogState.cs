@@ -15,21 +15,19 @@ public class PlayerDialogState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.InputReader.InteractEvent += OnInteract;
 
         stateMachine.Animator.CrossFadeInFixedTime(NPCState, 0.1f);
 
     }
     public override void Tick(float deltaTime)
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            stateMachine.SwitchState(new PlayerMovementState(stateMachine));
+        }
     }
     public override void Exit()
     {
-        stateMachine.InputReader.InteractEvent -= OnInteract;
-    }
-    private void OnInteract()
-    {
-        stateMachine.SwitchState(new PlayerMovementState(stateMachine));
+        
     }
 }

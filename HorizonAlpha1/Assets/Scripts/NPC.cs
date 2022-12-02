@@ -9,7 +9,10 @@ using UnityEditor.Timeline.Actions;
 
 public class NPC : MonoBehaviour
 {
+    public InputReader inputreader;
+
     public GameObject dialoguePanel;
+    public GameObject contButton;
     public Text dialogueText;
     public string[] dialogue;
 
@@ -28,7 +31,10 @@ public class NPC : MonoBehaviour
     {
         if(playerCollided && Input.GetKeyDown(KeyCode.E))
         {
-            if(dialoguePanel.activeInHierarchy)
+
+            Cursor.visible = true;
+
+            if (dialoguePanel.activeInHierarchy)
             {
                 ZeroText();
             }
@@ -37,6 +43,10 @@ public class NPC : MonoBehaviour
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
+        }
+        if(dialogueText.text == dialogue[index])
+        {
+            contButton.SetActive(true);
         }
     }
     IEnumerator Typing()
@@ -49,6 +59,8 @@ public class NPC : MonoBehaviour
     }
     public void NextLine()
     {
+        contButton.SetActive(false);
+
         if(index < dialogue.Length - 1)
         {
             index++;
