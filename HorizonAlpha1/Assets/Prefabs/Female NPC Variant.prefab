@@ -191,10 +191,14 @@ MonoBehaviour:
   inputreader: {fileID: 0}
   dialoguePanel: {fileID: 0}
   contButton: {fileID: 0}
+  sprite: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogue:
   - Hello traveler!
-  - 'The Evil Wizard has '
+  - The Evil Wizard has turned all the villagers into creatures. There are only a
+    few of us left.
+  - Make your way to the castle in the distance and defeat the evil wizard once and
+    for all!
   wordSpeed: 0.03
   playerCollided: 0
 --- !u!114 &7521535292327914247

@@ -39,6 +39,7 @@ public class PlayerMovementState : PlayerBaseState
         if (stateMachine.NPC.playerCollided == true && Input.GetKeyDown(KeyCode.E))
         {
             stateMachine.Wall.SetActive(false);
+            stateMachine.Wall1.SetActive(false);
             stateMachine.SwitchState(new PlayerDialogState(stateMachine));
             
         }

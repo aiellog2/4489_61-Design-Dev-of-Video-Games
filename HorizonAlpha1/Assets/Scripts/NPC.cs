@@ -13,6 +13,7 @@ public class NPC : MonoBehaviour
 
     public GameObject dialoguePanel;
     public GameObject contButton;
+    public GameObject sprite;
     public Text dialogueText;
     public string[] dialogue;
 
@@ -21,14 +22,17 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerCollided;
 
-    public event Action<NPC> OnDestroyed;
 
-    private void OnDestroy()
-    {
-        OnDestroyed?.Invoke(this);
-    }
     void Update()
     {
+        if (playerCollided)
+        {
+            sprite.SetActive(true);
+        }
+        else
+        {
+            sprite.SetActive(false);
+        }
         if(playerCollided && Input.GetKeyDown(KeyCode.E))
         {
 
