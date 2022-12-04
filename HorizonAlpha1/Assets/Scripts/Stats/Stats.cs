@@ -3,5 +3,6 @@
   {
     Health,
     ExperienceReward,
-    ExperienceToLevelUp
+    ExperienceToLevelUp,
+    Damage
   }

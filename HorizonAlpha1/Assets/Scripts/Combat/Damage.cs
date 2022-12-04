@@ -1,23 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using RPG.Stats;
 
 
   public class Damage : MonoBehaviour
   {
       [SerializeField] private Collider playerCollider;
 
-      private int damage;
+      private float damage;
+      private float multiplier;
       private float knockback;
       public SpriteRenderer sprite;
 
       private List<Collider> CollidedWith = new List<Collider>();
 
+      public void Start()
+      {
+        //multiplier = GetComponent<BaseStats>().GetStat(Stat.Damage);
+      }
+
       private void OnEnable()
       {
           CollidedWith.Clear();
       }
+
+
+
 
       private void OnTriggerEnter(Collider other)
       {
@@ -40,7 +49,7 @@ using UnityEngine;
       }
       public void SetAttack(int damage, float knockback)
       {
-          this.damage = damage;
+          this.damage = damage; // * multiplier;
           this.knockback = knockback;
       }
   }
