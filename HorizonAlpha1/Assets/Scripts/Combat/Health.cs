@@ -23,6 +23,9 @@ public class Health : MonoBehaviour
       public GameObject player;
       public bool Dead => health == 0;
 
+
+      public float weaponBonus = 9;
+      private float multiplier;
       private void Start()
       {
         GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
@@ -31,6 +34,12 @@ public class Health : MonoBehaviour
         health = maxHealth;
 
         Debug.Log("start health: " + maxHealth);
+      }
+
+      public void Update()
+      {
+        //weaponBonus = GetComponent<Weapon>().GetDamage();
+        //Debug.Log("weaponBonus" + weaponBonus);
       }
 
       public void SetBlocking(bool blocking)
@@ -44,7 +53,7 @@ public class Health : MonoBehaviour
 
           if(blocking) {return; }
 
-          health = Mathf.Max(health - damage, 0);
+          health = Mathf.Max(health - (damage + weaponBonus), 0);
 
           takeDamage?.Invoke();
 
@@ -81,6 +90,11 @@ public class Health : MonoBehaviour
         return health;
       }
 
+      public float GetMultiplier()
+      {
+        return GetComponent<BaseStats>().GetStat(Stat.Damage);
+      }
+
       private void AwardExperience()
       {
         Experience experience = player.GetComponent<Experience>();
@@ -94,5 +108,7 @@ public class Health : MonoBehaviour
         float regenHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
         health = Mathf.Max(health, regenHealthPoints);
       }
+
+
 
   }

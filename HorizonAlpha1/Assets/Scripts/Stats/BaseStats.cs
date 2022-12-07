@@ -12,6 +12,8 @@ using UnityEngine;
       [SerializeField] Progression progression = null;
       [SerializeField] GameObject levelUpParticleEffect = null;
 
+      float modifier;// = 1.1;
+
       public event Action onLevelUp;
 
       int currentLevel = 0;
@@ -55,6 +57,19 @@ using UnityEngine;
           currentLevel = CalculateLevel();
         }
         return currentLevel;
+      }
+
+      private float GetAdditiveModifier(Stat stat)
+      {
+          float total = 0;
+          foreach(IModifierProvider provider in GetComponents<IModifierProvider>())
+          {
+            foreach (float modifiers in provider.GetAdditiveModifier(stat))
+            {
+              total += modifier;
+            }
+          }
+          return total;
       }
 
 

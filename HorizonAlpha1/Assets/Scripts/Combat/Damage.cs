@@ -18,14 +18,13 @@ using UnityEngine;
       public void Start()
       {
         //multiplier = GetComponent<BaseStats>().GetStat(Stat.Damage);
+
       }
 
       private void OnEnable()
       {
           CollidedWith.Clear();
       }
-
-
 
 
       private void OnTriggerEnter(Collider other)
@@ -42,10 +41,10 @@ using UnityEngine;
           }
 
           if(other.TryGetComponent<Force>(out Force force))
-        {
+          {
             Vector3 direction = ((other.transform.position - playerCollider.transform.position).normalized);
             force.AddForce(direction * knockback);
-        }
+          }
       }
       public void SetAttack(int damage, float knockback)
       {
