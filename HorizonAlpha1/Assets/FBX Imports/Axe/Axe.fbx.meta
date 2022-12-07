@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f02bb5226a474dfbb0c76914d54bac6
+guid: 4e544689c7e8f4b3b8223ac86fe60280
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Axe_Blade
-    second: {fileID: 2100000, guid: 89c8c381c00d1473ea14e63314fa0217, type: 2}
+    second: {fileID: 2100000, guid: 7a4322b1e381243c486a0940220a747b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Axe_Handle
-    second: {fileID: 2100000, guid: 3942fb09c008041108b683ed891b42d1, type: 2}
+    second: {fileID: 2100000, guid: 28d605734538840fca787a2257dacc67, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
