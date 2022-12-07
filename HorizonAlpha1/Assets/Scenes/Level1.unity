@@ -585,7 +585,10 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 483a56f649d228f47be5210dc1f8109c, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!1 &242920987
@@ -683,6 +686,9 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
+=======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -956,7 +962,10 @@ MonoBehaviour:
   m_LightCookieOffset: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!1 &474279288
@@ -1356,6 +1365,9 @@ RectTransform:
   m_SizeDelta: {x: 831.355, y: 295.916}
   m_Pivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
+=======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -2399,7 +2411,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!4 &904698270
@@ -2419,6 +2434,9 @@ Transform:
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
+=======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -2505,7 +2523,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!43 &965420687
@@ -2673,6 +2694,9 @@ Mesh:
     size: 0
     path: 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
+=======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -4219,7 +4243,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 7
+=======
+      value: 10
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
       value: 10
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -4302,7 +4330,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: -570.74994
+=======
+      value: -570.74945
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
       value: -570.74945
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -6747,7 +6779,11 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 8
+=======
+  m_RootOrder: 11
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
   m_RootOrder: 11
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -8402,7 +8438,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0.9999913
+=======
+      value: 0.9339767
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
       value: 0.9339767
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -8415,7 +8455,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0.0039339466
+=======
+      value: 0.0067296936
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
       value: 0.0067296936
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -8428,7 +8472,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: -0.0014476478
+=======
+      value: 0.35726124
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
       value: 0.35726124
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -8441,7 +8489,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0.000015166472
+=======
+      value: -0.0025742515
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
       value: -0.0025742515
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
