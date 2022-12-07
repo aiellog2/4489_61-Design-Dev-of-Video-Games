@@ -3300,7 +3300,7 @@ PrefabInstance:
     - target: {fileID: 8197818128651347997, guid: 0e8961ff9b63049d69d51c928755ec83,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -683.51135
+      value: -761.9858
       objectReference: {fileID: 0}
     - target: {fileID: 8197832156068041071, guid: 0e8961ff9b63049d69d51c928755ec83,
         type: 3}
@@ -7117,7 +7117,7 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: b13412f10dda847aaa14c0783c83020b,
+      objectReference: {fileID: 11400000, guid: a60f9493a0def46359b9bde300b89b7f,
         type: 2}
     - target: {fileID: 5053785912068115406, guid: 9ca88b651178e274fa8aaa14da0abe03,
         type: 3}
