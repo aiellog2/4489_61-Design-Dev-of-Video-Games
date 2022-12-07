@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ragdoll
   - Health
-  - Wall
   layers:
   - Default
   - TransparentFX

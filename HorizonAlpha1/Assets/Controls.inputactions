@@ -76,15 +76,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "d53fbe97-fa93-4419-ae61-63ebd04af909",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -272,17 +263,6 @@
                     "processors": "",
                     "groups": "Mouse & Keyboard",
                     "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c185edb5-bcdc-47dd-a09b-5e158295646c",
-                    "path": "<Keyboard>/e",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
-                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

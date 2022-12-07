@@ -9,9 +9,7 @@ public class Health : MonoBehaviour
   {
       //[SerializeField] private int maxHealth = 100;
 
-
       [SerializeField] float regenerationPercentage = 70;
-
 
       public float maxHealth;
       public float health;
