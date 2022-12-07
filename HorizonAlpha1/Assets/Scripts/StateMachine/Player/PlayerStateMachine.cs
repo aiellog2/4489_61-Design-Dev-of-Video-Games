@@ -30,11 +30,6 @@ public class PlayerStateMachine : StateMachine
     public Transform MainCameraTransform { get; private set; }
      public float PreviousRollTime { get; private set; } = Mathf.NegativeInfinity;
 
-     //[SerializeField] GameObject weaponPrefab = null;
-     [SerializeField] Transform handTransform = null;
-     [SerializeField] Weapon defaultWeapon = null;
-
-     Weapon currentWeapon = null;
 
     private void Start()
       {
@@ -42,25 +37,8 @@ public class PlayerStateMachine : StateMachine
 
           MainCameraTransform = Camera.main.transform;
 
-          EquipWeapon(defaultWeapon);
-
           SwitchState(new PlayerMovementState(this));
       }
-
-    public void EquipWeapon(Weapon weapon)
-    {
-      currentWeapon = weapon;
-      if (weapon == null) return;
-      weapon.Spawn(handTransform);
-    }
-
-    public IEnumerable<float> GetAdditiveModifier(Stat stat)
-    {
-      if (stat == Stat.Damage)
-      {
-        yield return currentWeapon.GetDamage();
-      }
-    }
 
     private void OnEnable()
     {
