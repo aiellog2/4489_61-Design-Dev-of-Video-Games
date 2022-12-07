@@ -587,7 +587,10 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
@@ -688,6 +691,7 @@ GameObject:
   m_IsActive: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -695,6 +699,8 @@ GameObject:
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +973,10 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
@@ -1370,6 +1379,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -1377,6 +1387,8 @@ RectTransform:
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!1001 &563154567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2419,7 +2431,10 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
@@ -2442,6 +2457,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -2449,6 +2465,8 @@ Transform:
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!4 &936438507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2178083168294063588, guid: 3edaf79edfe56aa4bbcbdc951d34b1a0,
@@ -2534,7 +2552,10 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
@@ -2705,6 +2726,7 @@ Mesh:
     path: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
@@ -2712,6 +2734,8 @@ Mesh:
 >>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 =======
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
 --- !u!1001 &1006096952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4257,6 +4281,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 7
 =======
       value: 10
@@ -4270,6 +4295,9 @@ PrefabInstance:
 =======
       value: 7
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+      value: 10
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
       objectReference: {fileID: 0}
     - target: {fileID: 4618551113055616345, guid: 0e8961ff9b63049d69d51c928755ec83,
         type: 3}
@@ -4348,6 +4376,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: -570.74994
 =======
       value: -570.74945
@@ -4361,6 +4390,9 @@ PrefabInstance:
 =======
       value: -570.74994
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+      value: -570.74945
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
       objectReference: {fileID: 0}
     - target: {fileID: 8197832156068041071, guid: 0e8961ff9b63049d69d51c928755ec83,
         type: 3}
@@ -6801,6 +6833,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 8
 =======
   m_RootOrder: 11
@@ -6814,6 +6847,9 @@ Transform:
 =======
   m_RootOrder: 8
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+  m_RootOrder: 11
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
   m_LocalEulerAnglesHint: {x: 0, y: -52.617, z: 0}
 --- !u!224 &1908316655 stripped
 RectTransform:
@@ -8467,6 +8503,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0.9999913
 =======
       value: 0.9339767
@@ -8480,6 +8517,9 @@ PrefabInstance:
 =======
       value: 0.9999913
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+      value: 0.9339767
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
       objectReference: {fileID: 0}
     - target: {fileID: 5053785912392716961, guid: 9ca88b651178e274fa8aaa14da0abe03,
         type: 3}
@@ -8488,6 +8528,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0.0039339466
 =======
       value: 0.0067296936
@@ -8501,6 +8542,9 @@ PrefabInstance:
 =======
       value: 0.0039339466
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+      value: 0.0067296936
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
       objectReference: {fileID: 0}
     - target: {fileID: 5053785912392716961, guid: 9ca88b651178e274fa8aaa14da0abe03,
         type: 3}
@@ -8509,6 +8553,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: -0.0014476478
 =======
       value: 0.35726124
@@ -8522,6 +8567,9 @@ PrefabInstance:
 =======
       value: -0.0014476478
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+      value: 0.35726124
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
       objectReference: {fileID: 0}
     - target: {fileID: 5053785912392716961, guid: 9ca88b651178e274fa8aaa14da0abe03,
         type: 3}
@@ -8530,6 +8578,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0.000015166472
 =======
       value: -0.0025742515
@@ -8543,6 +8592,9 @@ PrefabInstance:
 =======
       value: 0.000015166472
 >>>>>>> parent of ad843b0 (Merge pull request #31 from aiellog2/npc_contact)
+=======
+      value: -0.0025742515
+>>>>>>> parent of 41a7839 (Merge branch 'main' into npc_contact)
       objectReference: {fileID: 0}
     - target: {fileID: 5053785912925537956, guid: 9ca88b651178e274fa8aaa14da0abe03,
         type: 3}
