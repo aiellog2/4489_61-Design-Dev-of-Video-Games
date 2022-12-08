@@ -49,7 +49,7 @@ public class BaseStats : MonoBehaviour
 
       public float GetStat(Stat stat)
       {
-        return progression.GetStat(stat, characterClass, startingLevel);
+        return progression.GetStat(stat, characterClass, currentLevel);
       }
 
       public int GetLevel()
