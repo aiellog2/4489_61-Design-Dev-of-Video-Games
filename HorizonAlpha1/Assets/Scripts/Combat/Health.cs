@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
   {
       //[SerializeField] private int maxHealth = 100;
+      [SerializeField] float regenerationPercentage = 70;
+
       public float maxHealth;
       public float health;
 
@@ -20,8 +22,12 @@ public class Health : MonoBehaviour
       public GameObject player;
       public bool Dead => health == 0;
 
+      public float weaponBonus = 9;
+      private float multiplier;
+
       private void Start()
       {
+        GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
         player = GameObject.FindWithTag("Player");
         maxHealth = GetComponent<BaseStats>().GetStat(Stat.Health);
         health = maxHealth;
@@ -59,9 +65,24 @@ public class Health : MonoBehaviour
         health = Mathf.Min(health, maxHealth);
     }
 
-    public float GetPercentage()
+      public float GetHealthPoints()
+      {
+        return health;
+      }
+
+      public float GetMaxHealthPoints()
+      {
+        return GetComponent<BaseStats>().GetStat(Stat.Health);
+      }
+
+      public float GetPercentage()
       {
         return health; //100 * ( health / GetComponent<BaseStats>().GetStat(Stat.Health));
+      }
+
+      public float GetMultiplier()
+      {
+        return GetComponent<BaseStats>().GetStat(Stat.Damage);
       }
 
       private void AwardExperience()
@@ -70,6 +91,12 @@ public class Health : MonoBehaviour
         if (experience == null) return;
 
         experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
+      }
+
+      private void RegenerateHealth()
+      {
+        float regenHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
+        health = Mathf.Max(health, regenHealthPoints);
       }
 
 
