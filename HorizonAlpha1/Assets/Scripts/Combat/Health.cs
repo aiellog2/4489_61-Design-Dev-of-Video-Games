@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
       //[SerializeField] private int maxHealth = 100;
 
       [SerializeField] float regenerationPercentage = 70;
-
+      
       public float maxHealth;
       public float health;
 
@@ -23,37 +23,25 @@ public class Health : MonoBehaviour
       public GameObject player;
       public bool Dead => health == 0;
 
-
-      public float weaponBonus = 9;
-      private float multiplier;
       private void Start()
       {
-        GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
         player = GameObject.FindWithTag("Player");
         maxHealth = GetComponent<BaseStats>().GetStat(Stat.Health);
         health = maxHealth;
 
         Debug.Log("start health: " + maxHealth);
       }
-
-      public void Update()
-      {
-        //weaponBonus = GetComponent<Weapon>().GetDamage();
-        //Debug.Log("weaponBonus" + weaponBonus);
-      }
-
-      public void SetBlocking(bool blocking)
-      {
+    public void SetBlocking(bool blocking)
+    {
         this.blocking = blocking;
-      }
-
-      public void DealDamage(float damage)
+    }
+      public void DealDamage(int damage)
       {
           if (health == 0) { return; }
 
           if(blocking) {return; }
 
-          health = Mathf.Max(health - (damage + weaponBonus), 0);
+          health = Mathf.Max(health - damage, 0);
 
           takeDamage?.Invoke();
 
@@ -64,35 +52,19 @@ public class Health : MonoBehaviour
         }
           Debug.Log(health);
       }
-
-      public void Heal(float amount)
-      {
+    public void Heal(float amount)
+    {
         if (health == 0) { return; }
 
         if (blocking) { return; }
 
         health = Mathf.Max(health + amount);
         health = Mathf.Min(health, maxHealth);
-      }
+    }
 
-      public float GetHealthPoints()
+    public float GetPercentage()
       {
-        return health;
-      }
-
-      public float GetMaxHealthPoints()
-      {
-        return GetComponent<BaseStats>().GetStat(Stat.Health);
-      }
-
-      public float GetPercentage()
-      {
-        return health;
-      }
-
-      public float GetMultiplier()
-      {
-        return GetComponent<BaseStats>().GetStat(Stat.Damage);
+        return health; //100 * ( health / GetComponent<BaseStats>().GetStat(Stat.Health));
       }
 
       private void AwardExperience()
@@ -103,11 +75,16 @@ public class Health : MonoBehaviour
         experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
       }
 
-      private void RegenerateHealth()
+
+      /* public void TakeDamage(GameObject instigator, float damage)
       {
-        float regenHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
-        health = Mathf.Max(health, regenHealthPoints);
-      }
+        healthPoints = Mathf.Max(healthPoints - damage, 0);
+        if(healthPoints == 0)
+        {
+          Die();
+          AwardExperience(instigator);
+        }
+      } */
 
 
 
