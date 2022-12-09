@@ -17,3 +17,6 @@ public class HealthPickup : MonoBehaviour
         }
     }
 }
+
+// UPDATE To use health from basestats
+//  health = GetComponent<BaseStats>().GetStat(Stat.Health);

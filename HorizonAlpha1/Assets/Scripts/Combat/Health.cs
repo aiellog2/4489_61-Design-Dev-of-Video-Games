@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
   {
       //[SerializeField] private int maxHealth = 100;
+
       [SerializeField] float regenerationPercentage = 70;
 
       public float maxHealth;
@@ -22,6 +23,7 @@ public class Health : MonoBehaviour
       public GameObject player;
       public bool Dead => health == 0;
 
+
       public float weaponBonus = 9;
       private float multiplier;
 
@@ -34,11 +36,14 @@ public class Health : MonoBehaviour
 
         Debug.Log("start health: " + maxHealth);
       }
+
+
+
     public void SetBlocking(bool blocking)
     {
         this.blocking = blocking;
     }
-      public void DealDamage(int damage)
+      public void DealDamage(float damage)
       {
           if (health == 0) { return; }
 
