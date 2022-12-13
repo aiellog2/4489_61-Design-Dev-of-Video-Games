@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
         health = maxHealth;
 
         Debug.Log("start health: " + maxHealth);
+        
       }
 
 
