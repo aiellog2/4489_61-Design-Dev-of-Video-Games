@@ -18,6 +18,7 @@ public class PlayerStateMachine : StateMachine
      [field: SerializeField] public StaminaBar StaminaBar { get; private set; }
      [field: SerializeField] public HealthBar HealthBar { get; private set; }
      [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
+     [field: SerializeField] public ParticleSystem PlayerHit { get; private set; }
      [field: SerializeField] public float FreeMovementSpeed { get; private set; }
      [field: SerializeField] public float SprintMovementSpeed { get; private set; }
      [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
@@ -75,6 +76,7 @@ public class PlayerStateMachine : StateMachine
     }
     private void tookDamage()
     {
+        PlayerHit.Play();
         SwitchState(new PlayerHitState(this));
     }
     private void Death()

@@ -541,29 +541,29 @@ namespace CartoonFX
 			}
 #endif
 #if !DISABLE_CLEAR_BEHAVIOR
-			if (clearBehavior != ClearBehavior.None)
-			{
-				if (rootParticleSystem == null)
-				{
-					rootParticleSystem = this.GetComponent<ParticleSystem>();
-				}
+			//if (clearBehavior != ClearBehavior.None)
+			//{
+			//	if (rootParticleSystem == null)
+			//	{
+			//		rootParticleSystem = this.GetComponent<ParticleSystem>();
+			//	}
 
-				// Check isAlive every N frame, with an offset so that all active effects aren't checked at once
-				if ((Time.renderedFrameCount + startFrameOffset) % CHECK_EVERY_N_FRAME == 0)
-				{
-					if (!rootParticleSystem.IsAlive(true))
-					{
-						if (clearBehavior == ClearBehavior.Destroy)
-						{
-							GameObject.Destroy(this.gameObject);
-						}
-						else
-						{
-							this.gameObject.SetActive(false);
-						}
-					}
-				}
-			}
+			//	// Check isAlive every N frame, with an offset so that all active effects aren't checked at once
+			//	if ((Time.renderedFrameCount + startFrameOffset) % CHECK_EVERY_N_FRAME == 0)
+			//	{
+			//		if (!rootParticleSystem.IsAlive(true))
+			//		{
+			//			if (clearBehavior == ClearBehavior.Destroy)
+			//			{
+			//				GameObject.Destroy(this.gameObject);
+			//			}
+			//			else
+			//			{
+			//				this.gameObject.SetActive(false);
+			//			}
+			//		}
+			//	}
+			//}
 #endif
 			if (materialPropertyBlock != null)
 			{

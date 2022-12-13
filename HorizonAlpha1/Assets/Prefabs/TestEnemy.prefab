@@ -2970,6 +2970,8 @@ MonoBehaviour:
   <Health>k__BackingField: {fileID: 2931352086253920764}
   <Target>k__BackingField: {fileID: 2931352086253920765}
   <Ragdoll>k__BackingField: {fileID: 2931352086253920760}
+  <Blood>k__BackingField: {fileID: 8791802859067835849, guid: ae07f2a45f14a82428409cfe410e6002,
+    type: 3}
   <MoveSpeed>k__BackingField: 13
   <DetectionRange>k__BackingField: 35
   <AttackRange>k__BackingField: 3
@@ -2999,9 +3001,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd89e5feac961a478098d3ed7da9677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerationPercentage: 70
   maxHealth: 0
   health: 0
   player: {fileID: 0}
+  weaponBonus: 9
 --- !u!114 &2931352086253920763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3081,6 +3085,7 @@ MonoBehaviour:
   startingLevel: 2
   characterClass: 1
   progression: {fileID: 11400000, guid: 407a46b91f9744d029ce750c1a6e99a9, type: 2}
+  levelUpParticleEffect: {fileID: 0}
 --- !u!1 &2931352087600908847
 GameObject:
   m_ObjectHideFlags: 0
