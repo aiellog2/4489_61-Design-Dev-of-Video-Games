@@ -20,7 +20,7 @@ using System.Collections.Generic;
           return 0;
         }
 
-        return levels[level-1];
+        return levels[level];
 
       }
 

@@ -3,7 +3,10 @@ guid: 83f4fb0267bc9432da92a92a85a75302
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - progression: {fileID: 11400000, guid: 407a46b91f9744d029ce750c1a6e99a9, type: 2}
+  - levelUpParticleEffect: {fileID: 3727344454665662049, guid: 470923023960a4dc0bdfb26c1dbce1a7,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

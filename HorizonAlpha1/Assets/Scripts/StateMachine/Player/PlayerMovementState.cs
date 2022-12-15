@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System;
 using UnityEditor.Timeline.Actions;
 using UnityEditor.ShaderGraph;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementState : PlayerBaseState
 {
@@ -15,34 +16,46 @@ public class PlayerMovementState : PlayerBaseState
 
     private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
-    
+
 
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
 
-    public PlayerMovementState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine) 
+    private int scene = SceneManager.GetActiveScene().buildIndex;
+
+  /*  public void Start()
+    {
+       if (scene > 0);
+      {
+        Debug.Log("Not on level 1");
+      }
+    }*/
+
+    public PlayerMovementState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine)
     {
         this.shouldFade = shouldFade;
     }
-    
+
     public override void Enter()
     {
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.TargetEvent += OnTarget;
-        
+
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
     }
     public override void Tick(float deltaTime)
     {
         stateMachine.StaminaBar.IncreaseStamina();
-
-        if (stateMachine.NPC.playerCollided == true && Input.GetKeyDown(KeyCode.E))
+        if (scene == 0)
         {
-            stateMachine.Wall.SetActive(false);
-            stateMachine.Wall1.SetActive(false);
-            stateMachine.SwitchState(new PlayerDialogState(stateMachine));
-            
+          if (stateMachine.NPC.playerCollided == true && Input.GetKeyDown(KeyCode.E))
+          {
+              stateMachine.Wall.SetActive(false);
+              stateMachine.Wall1.SetActive(false);
+              stateMachine.SwitchState(new PlayerDialogState(stateMachine));
+          }
         }
+
 
         if (stateMachine.InputReader.isAttacking && stateMachine.StaminaBar.stamina > 0)
         {
@@ -59,7 +72,7 @@ public class PlayerMovementState : PlayerBaseState
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
             return;
         }
-        
+
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
 
             if (stateMachine.InputReader.isSprinting && stateMachine.StaminaBar.stamina > 0)
