@@ -12,12 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: 3ce69f8adc9134b9682e6f6d353a6a3c
-  - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 2b5b5ab2ac61c45bd8ddfe32caa06d9a
   - enabled: 1
     path: Assets/Scenes/LossScreen.unity
     guid: 3e955c1f6b150497b933b4c98e32a133
+  - enabled: 1
+    path: Assets/Scenes/FinalLevel.unity
+    guid: 1171e344606855545859a0eff40ac320
   m_configObjects: {}

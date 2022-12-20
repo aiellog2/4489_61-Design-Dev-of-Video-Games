@@ -10,7 +10,7 @@ public class HealthPickup : MonoBehaviour
     {
         Health health = other.GetComponent<Health>();
 
-        if (health && health.health < health.maxHealth)
+        if (health && health.health < health.maxHealth && other.gameObject.tag == "Player")
         {
             health.Heal(amount);
             Destroy(gameObject);

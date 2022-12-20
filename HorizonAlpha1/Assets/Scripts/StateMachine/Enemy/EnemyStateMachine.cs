@@ -13,6 +13,9 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public Health Health { get; private set; }
     [field: SerializeField] public Target Target { get; private set; }
     [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
+    [field: SerializeField] public ParticleSystem Blood { get; private set; }
+    [field: SerializeField] public ParticleSystem Shadow { get; private set; }
+    [field: SerializeField] public ParticleSystem DeadEffect { get; private set; }
     [field: SerializeField] public float MoveSpeed { get; private set; }
     [field: SerializeField] public float DetectionRange { get; private set; }
     [field: SerializeField] public float AttackRange { get; private set; }
@@ -44,16 +47,24 @@ public class EnemyStateMachine : StateMachine
     }
     private void tookDamage()
     {
+        Blood.Play();
         SwitchState(new EnemyHitState(this));
     }
     private void Death()
     {
         SwitchState(new EnemyDieState(this));
+        Shadow.Stop();
+        DeadEffect.Play();
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, DetectionRange);
+    }
+
+    public void Bleed()
+    {
+
     }
 
 }

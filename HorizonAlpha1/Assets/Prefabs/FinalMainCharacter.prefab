@@ -3121,8 +3121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd89e5feac961a478098d3ed7da9677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerationPercentage: 70
+  maxHealth: 0
   health: 0
   player: {fileID: 0}
+  weaponBonus: 9
 --- !u!114 &4974841490128971864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3151,6 +3154,7 @@ MonoBehaviour:
   startingLevel: 2
   characterClass: 0
   progression: {fileID: 11400000, guid: 407a46b91f9744d029ce750c1a6e99a9, type: 2}
+  levelUpParticleEffect: {fileID: 0}
 --- !u!114 &4974841490128971866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3166,12 +3170,18 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 4974841490128971867}
   <Controller>k__BackingField: {fileID: 4974841490128971857}
   <Targeter>k__BackingField: {fileID: 9090081539162912888}
+  <NPC>k__BackingField: {fileID: 0}
+  <Wall>k__BackingField: {fileID: 0}
+  <Wall1>k__BackingField: {fileID: 0}
+  <Player>k__BackingField: {fileID: 0}
   <Animator>k__BackingField: {fileID: 4974841490128971879}
   <Weapon>k__BackingField: {fileID: 5109484014139197104}
   <Health>k__BackingField: {fileID: 4974841490128971871}
   <StaminaBar>k__BackingField: {fileID: 0}
   <HealthBar>k__BackingField: {fileID: 0}
   <Ragdoll>k__BackingField: {fileID: 4974841490128971869}
+  <Blood>k__BackingField: {fileID: 5880797563141009103, guid: 265d3a5ba69981a4698ceabcedf368b0,
+    type: 3}
   <FreeMovementSpeed>k__BackingField: 14
   <SprintMovementSpeed>k__BackingField: 17
   <TargetingMovementSpeed>k__BackingField: 15
@@ -3188,7 +3198,6 @@ MonoBehaviour:
     <Force>k__BackingField: 8
     <Knockback>k__BackingField: 5
     <Damage>k__BackingField: 20
-    <StaminaCost>k__BackingField: 0
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
@@ -3197,7 +3206,6 @@ MonoBehaviour:
     <Force>k__BackingField: 8
     <Knockback>k__BackingField: 6
     <Damage>k__BackingField: 30
-    <StaminaCost>k__BackingField: 0
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
@@ -3206,8 +3214,9 @@ MonoBehaviour:
     <Force>k__BackingField: 12
     <Knockback>k__BackingField: 7
     <Damage>k__BackingField: 40
-    <StaminaCost>k__BackingField: 0
   <JumpForce>k__BackingField: 13
+  handTransform: {fileID: 0}
+  defaultWeapon: {fileID: 0}
 --- !u!114 &4974841490128971867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3220,7 +3229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a06b50cd1a334942b6ed35910b2166d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaBar: {fileID: 0}
 --- !u!114 &4974841490128971859
 MonoBehaviour:
   m_ObjectHideFlags: 0

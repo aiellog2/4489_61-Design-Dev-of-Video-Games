@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class PlayerStateMachine : StateMachine
   {
@@ -18,6 +21,8 @@ public class PlayerStateMachine : StateMachine
      [field: SerializeField] public StaminaBar StaminaBar { get; private set; }
      [field: SerializeField] public HealthBar HealthBar { get; private set; }
      [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
+     [field: SerializeField] public ParticleSystem PlayerHit { get; private set; }
+     [field: SerializeField] public ParticleSystem PlayerDie { get; private set; }
      [field: SerializeField] public float FreeMovementSpeed { get; private set; }
      [field: SerializeField] public float SprintMovementSpeed { get; private set; }
      [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
@@ -34,7 +39,8 @@ public class PlayerStateMachine : StateMachine
      [SerializeField] Transform handTransform = null;
      [SerializeField] Weapon defaultWeapon = null;
 
-     Weapon currentWeapon = null;
+
+    Weapon currentWeapon = null;
 
     private void Start()
       {
@@ -75,10 +81,19 @@ public class PlayerStateMachine : StateMachine
     }
     private void tookDamage()
     {
+        PlayerHit.Play();
         SwitchState(new PlayerHitState(this));
     }
     private void Death()
-    {
+    {   
         SwitchState(new PlayerDieState(this));
+        StartCoroutine(ReloadScreen());
+        PlayerDie.Play();
+    }
+
+    private IEnumerator ReloadScreen()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

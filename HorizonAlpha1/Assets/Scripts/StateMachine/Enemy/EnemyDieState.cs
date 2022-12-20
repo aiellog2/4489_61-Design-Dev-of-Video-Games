@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDieState : EnemyBaseState
 {
+
     public EnemyDieState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
@@ -11,6 +12,7 @@ public class EnemyDieState : EnemyBaseState
         stateMachine.Ragdoll.ToggleRagdoll(true);
         stateMachine.Weapon.gameObject.SetActive(false);
         GameObject.Destroy(stateMachine.Target);
+
     }
     public override void Tick(float deltaTime)
     {

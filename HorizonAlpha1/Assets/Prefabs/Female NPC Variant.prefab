@@ -197,8 +197,8 @@ MonoBehaviour:
   - Hello traveler!
   - The Evil Wizard has turned all the villagers into creatures. There are only a
     few of us left.
-  - Make your way to the castle in the distance and defeat the evil wizard once and
-    for all!
+  - Grab the axe ahead and make your way to the castle in the distance and defeat
+    the evil wizard once and for all!
   wordSpeed: 0.03
   playerCollided: 0
 --- !u!114 &7521535292327914247

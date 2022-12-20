@@ -8,10 +8,10 @@ public class WeaponPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-      if(other.gameObject.tag == "Player")
-      {
-        other.GetComponent<PlayerStateMachine>().EquipWeapon(weapon);
-        Destroy(gameObject);
-      }
+        if (other.gameObject.tag == "Player")
+        {
+            other.GetComponent<PlayerStateMachine>().EquipWeapon(weapon);
+            Destroy(gameObject);
+        }
     }
 }
