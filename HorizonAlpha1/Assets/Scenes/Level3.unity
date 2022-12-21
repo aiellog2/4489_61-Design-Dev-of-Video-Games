@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d4d3b84876c464d409f739b298a5e077,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4d3b84876c464d409f739b298a5e077,
         type: 3}
@@ -1463,9 +1463,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIThirdPersonController
       objectReference: {fileID: 0}
+    - target: {fileID: 113348, guid: 54eb5844754051b40a918a84c33b7c1a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 436670, guid: 54eb5844754051b40a918a84c33b7c1a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 436670, guid: 54eb5844754051b40a918a84c33b7c1a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1603,17 +1607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae55aaac39ac0324dbc52378d9567c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1351158758}
-  cam: {fileID: 1829568314}
-  speed: 25
-  gravity: -80
-  jumpHeight: 2.7
-  groundCheck: {fileID: 957050059}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  turnSmoothTime: 0.1
 --- !u!1 &1404181027
 GameObject:
   m_ObjectHideFlags: 3
